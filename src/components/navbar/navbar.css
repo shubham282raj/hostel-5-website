@@ -1,0 +1,114 @@
+#navbar {
+  background-color: white;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 27px;
+  width: 100%;
+}
+
+#navbar .logo .hostelName{
+    text-wrap: nowrap;
+}
+
+#navbar .links {
+  display: inline-flex;
+  gap: 15px;
+}
+
+.links a{
+  text-decoration: none;
+  color: black;
+}
+
+#navbar .menuIcon{
+    display: none;
+    user-select: none;
+}
+
+.linkMenu{
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    #navbar{
+        flex-direction: row;
+        padding: 20px 50px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #navbar{
+        flex-direction: column;
+        padding: 20px 0;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #navbar{
+        padding: 10px 20px;
+        flex-direction: row;
+    }
+    #navbar .menuIcon{
+        display: inline-block;
+        /* border: 1px solid black; */
+        height: 40px;
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    #navbar .menuIcon .line1{
+        position: absolute;
+        /* transform: translate(0, 5px); */
+        z-index: 1;
+        display: block;
+        width: var(--menu-icon-width);
+        height: var(--menu-icon-height);
+        border-radius: var(--menu-icon-border-radius);
+        background-color: var(--menu-icon-exteme-color);
+        transition: all var(--menu-transition-time);
+    }
+    #navbar .menuIcon .line2{
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: var(--menu-icon-width);
+        height: var(--menu-icon-height);
+        border-radius: var(--menu-icon-border-radius);
+        background-color: var(--menu-icon-center-color);
+        transition: all var(--menu-transition-time);
+    }
+    #navbar .menuIcon .line3{
+        position: absolute;
+        z-index: 3;
+        display: block;
+        width: var(--menu-icon-width);
+        height: var(--menu-icon-height);
+        border-radius: var(--menu-icon-border-radius);
+        background-color: var(--menu-icon-exteme-color);
+        transition: all var(--menu-transition-time);
+    }
+    #navbar .links{
+        display: none;
+    }
+    .linkMenu{
+        background-color: var(--navbar-bg);
+        display: block;
+        overflow: hidden;
+        transition: all var(--menu-transition-time);
+    }
+    .linkMenu .links{
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+    }
+    .linkMenu .links a{
+        padding-bottom: 7px;
+    }
+}

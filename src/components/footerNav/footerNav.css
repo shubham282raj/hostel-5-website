@@ -1,0 +1,40 @@
+.footerNav {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  .footerNav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--navbar-bg);
+    padding: 15px 60px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 27px;
+    width: 100%;
+  }
+  .footerNav input {
+    display: none;
+  }
+  .footerNav input:checked + label {
+    color: red;
+  }
+  #tabContainer {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: ;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+  .tab {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    color: white;
+    height: 1200px;
+    width: 100vw;
+    border: 2px solid white;
+  }
+}

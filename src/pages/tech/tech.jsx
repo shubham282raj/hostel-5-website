@@ -1,7 +1,11 @@
- 
+import "./tech.css";
 
 export const Tech = () => {
-    return <div>
-        This is the tech page
+  return (
+    <div className="techpage">
+      <div className="header">
+        TECH
+      </div>
     </div>
-}
+  );
+};

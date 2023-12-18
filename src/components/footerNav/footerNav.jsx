@@ -1,0 +1,56 @@
+import "./footerNav.css";
+
+export const FooterNav = (props) => {
+  const handleTabChange = (tab) => {
+    const tabContainer = document.getElementById("tabContainer");
+    tabContainer.scrollTo(tabContainer.clientWidth * tab, 0);
+  };
+
+  const handleScrolling = () => {
+    const tabContainer = document.getElementById("tabContainer");
+    const rem = tabContainer.scrollLeft / tabContainer.clientWidth;
+    const nav = document.getElementsByName("footNavRadio");
+    nav[Math.round(rem)].checked = true;
+  };
+
+  return (
+    <div>
+      <div id="tabContainer" onScroll={() => handleScrolling()}>
+        {props.tabComponents.map((tab, key) => {
+          return (
+            <div className="tab" key={key}>
+              {tab}
+            </div>
+          );
+        })}
+      </div>
+      <div className="footerNav">
+        {props.tabLabels.map((label, key) => {
+          const labelID = label.toLowerCase();
+
+          return (
+            <div className="footNavButton" key={key}>
+              {key === 0 ? (
+                <input
+                  type="radio"
+                  name="footNavRadio"
+                  id={labelID}
+                  onClick={() => handleTabChange(key)}
+                  defaultChecked
+                />
+              ) : (
+                <input
+                  type="radio"
+                  name="footNavRadio"
+                  id={labelID}
+                  onClick={() => handleTabChange(key)}
+                />
+              )}
+              <label htmlFor={labelID}>{label}</label>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};

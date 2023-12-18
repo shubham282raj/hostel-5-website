@@ -1,15 +1,23 @@
+#navbarPadding {
+    height: 70px;
+}
+
 #navbar {
-  background-color: white;
+  
+  background-color: var(--navbar-bg);
   padding: 20px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 27px;
   width: 100%;
+  position: fixed;
 }
 
 #navbar .logo .hostelName{
     text-wrap: nowrap;
+    color: var(--text-color-1);
+    font-size: 27px;
 }
 
 #navbar .links {
@@ -19,7 +27,8 @@
 
 .links a{
   text-decoration: none;
-  color: black;
+  color: var(--text-color-1);
+  font-size: 24px;
 }
 
 #navbar .menuIcon{
@@ -39,11 +48,14 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     #navbar{
         flex-direction: column;
         padding: 20px 0;
         font-size: 24px;
+    }
+    #navbar .links{
+        padding-top: 10px;
     }
 }
 
@@ -102,6 +114,10 @@
         display: block;
         overflow: hidden;
         transition: all var(--menu-transition-time);
+        position: fixed;
+        top: 60px;
+        /* padding-top: 60px; */
+        width: 100vw;
     }
     .linkMenu .links{
         display: flex;

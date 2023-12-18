@@ -14,10 +14,12 @@
 
     --navbar-bg: white;
 
+    --text-color-1: black;
+
     --menu-icon-width: 80%;
     --menu-icon-height: 6%;
     --menu-icon-border-radius: 10px;
-    --menu-icon-center-color: black;
-    --menu-icon-exteme-color: black;
+    --menu-icon-center-color: var(--text-color-1);
+    --menu-icon-exteme-color: var(--text-color-1);
     --menu-transition-time: 0.5s;
   }

@@ -10,13 +10,13 @@ export const Navbar = () => {
   const LinkComponent = () => {
     return (
       <span className="links" onClick={()=>{toggleMenu && setToggleMenu(!toggleMenu)}}>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/tech"}>Tech</Link>
-        <Link to={"/web"}>Web</Link>
-        <Link to={"/cult"}>Cult</Link>
-        <Link to={"/sports"}>Sports</Link>
-        <Link to={"/mess"}>Mess</Link>
-        <Link to={"/council"}>Council</Link>
+        <Link to={"/"} className="navLinksLink">Home</Link>
+        <Link to={"/tech"} className="navLinksLink">Tech</Link>
+        <Link to={"/web"} className="navLinksLink">Web</Link>
+        <Link to={"/cult"} className="navLinksLink">Cult</Link>
+        <Link to={"/sports"} className="navLinksLink">Sports</Link>
+        <Link to={"/mess"} className="navLinksLink">Mess</Link>
+        <Link to={"/council"} className="navLinksLink">Council</Link>
       </span>
     );
   };
@@ -49,6 +49,7 @@ export const Navbar = () => {
       >
         <LinkComponent />
       </div>
+      <div id="navbarPadding"></div>
     </>
   );
 };

@@ -1,20 +1,40 @@
 import "./cult.css";
 import "../../components/footerNav/footerNav.css";
 import { FooterNav } from "../../components/footerNav/footerNav";
-
-const FeedTab = () => {
-    return(<div className="cultFeedTab">Feed Tab</div>)
-}
-const GCTab = () => {
-    return(<div className="gcFeedTab">GC Tab</div>)
-}
-const GalaryTab = () => {
-    return(<div className="galaryFeedTab">Galary Tab</div>)
-}
+import {LoadPost} from "../../components/loadPost/loadPost"
 
 export const Cult = () => {
-  return <div>
-    {/* the class which containes the tabs has id "tabContainer" */}
-    <FooterNav tabComponents={[<FeedTab/>, <GCTab/>, <GalaryTab/>]} tabLabels={["Feed", "GC", "Galary"]} />
-  </div>
+  //components
+  const FeedTab = () => {
+    return (
+      <div className="cultFeedTab">
+        <div className="tabName">Feed Tab</div>
+        <LoadPost path="cult"/>
+      </div>
+    );
+  };
+  const GCTab = () => {
+    return (
+      <div className="gcFeedTab">
+        <div className="tabName">GC Tab</div>
+      </div>
+    );
+  };
+  const GalaryTab = () => {
+    return (
+      <div className="galaryFeedTab">
+        <div className="tabName">Galary Tab</div>
+      </div>
+    );
+  };
+  //the main return
+  return (
+    <div>
+      {/* the class which containes the tabs has id "tabContainer" */}
+      <FooterNav
+        tabComponents={[<FeedTab />, <GCTab />, <GalaryTab />]}
+        tabLabels={["Feed", "GC", "Galary"]}
+      />
+    </div>
+  );
 };

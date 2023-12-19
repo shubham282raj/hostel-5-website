@@ -44,7 +44,7 @@ export const Navbar = () => {
       <div
         className="linkMenu"
         style={{
-          maxHeight: toggleMenu ? "240px" : "0",
+          maxHeight: toggleMenu ? "280px" : "0",
         }}
       >
         <LinkComponent />

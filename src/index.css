@@ -22,4 +22,7 @@
     --menu-icon-center-color: var(--text-color-1);
     --menu-icon-exteme-color: var(--text-color-1);
     --menu-transition-time: 0.5s;
+
+    --white: white;
+    --black: black;
   }

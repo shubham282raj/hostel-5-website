@@ -39,6 +39,12 @@
     overflow: hidden;
     overflow-x: scroll;
   }
+  #tabContainer .tabName{
+    text-align: left;
+    font-size: 24px;
+    padding: 5px 15px;
+    text-decoration: underline;
+  }
   .tab {
     flex-shrink: 0;
     scroll-snap-align: center;

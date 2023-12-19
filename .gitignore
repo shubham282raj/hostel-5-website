@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#google auth config
+/src/config/firebase.js
+
+#vs-code
+.vscode/

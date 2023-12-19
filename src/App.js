@@ -8,6 +8,7 @@ import { Cult } from './pages/cult/cult';
 import { Sports } from './pages/sports/sports';
 import { Mess } from './pages/mess/mess';
 import { Council } from './pages/council/council';
+import { LoginCouncil } from './pages/login/login';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/sports' element={<Sports/>}/> 
           <Route path='/mess' element={<Mess/>}/> 
           <Route path='/council' element={<Council/>}/> 
+          <Route path='/logincouncil' element={<LoginCouncil/>}/> 
         </Routes>
       </Router>
     

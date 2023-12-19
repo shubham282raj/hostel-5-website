@@ -8,7 +8,8 @@ import { Cult } from './pages/cult/cult';
 import { Sports } from './pages/sports/sports';
 import { Mess } from './pages/mess/mess';
 import { Council } from './pages/council/council';
-import { LoginCouncil } from './pages/login/login';
+import { LoginCouncil } from './pages/council/login/login';
+import { CreatePost } from './pages/council/createPost/createPost';
 
 function App() {
   return (
@@ -22,8 +23,11 @@ function App() {
           <Route path='/cult' element={<Cult/>}/>
           <Route path='/sports' element={<Sports/>}/> 
           <Route path='/mess' element={<Mess/>}/> 
-          <Route path='/council' element={<Council/>}/> 
-          <Route path='/logincouncil' element={<LoginCouncil/>}/> 
+          <Route path='/council'> 
+            <Route path='' element={<Council/>}/> 
+            <Route path='login' element={<LoginCouncil/>}/> 
+            <Route path='createPost' element={<CreatePost/>}/> 
+          </Route>
         </Routes>
       </Router>
     

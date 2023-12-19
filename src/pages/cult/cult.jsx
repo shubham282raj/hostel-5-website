@@ -1,22 +1,31 @@
 import "./cult.css";
 import "../../components/footerNav/footerNav.css";
 import { FooterNav } from "../../components/footerNav/footerNav";
-import {LoadPost} from "../../components/loadPost/loadPost"
+import { useLoadContent } from "../../components/loadPost/useLoadContent";
+import { FeedPost } from "../../components/feedPost/feedPost";
 
 export const Cult = () => {
+  const  [feedTabContent] = useLoadContent("cult/feed/feed")
+  const  [gcTabContent] = useLoadContent("cult/gc/gc")
+  const  [galaryTabContent] = useLoadContent("cult/galary/galary")
   //components
   const FeedTab = () => {
     return (
       <div className="cultFeedTab">
         <div className="tabName">Feed Tab</div>
-        <LoadPost path="cult"/>
+        {feedTabContent?.map((post) => {
+          return <FeedPost post={post} />;
+        })}
       </div>
     );
   };
   const GCTab = () => {
     return (
-      <div className="gcFeedTab">
+      <div className="cultFeedTab">
         <div className="tabName">GC Tab</div>
+        {gcTabContent?.map((post) => {
+          return <FeedPost post={post} />;
+        })}
       </div>
     );
   };
@@ -24,6 +33,9 @@ export const Cult = () => {
     return (
       <div className="galaryFeedTab">
         <div className="tabName">Galary Tab</div>
+        {galaryTabContent?.map((post) => {
+          return <FeedPost post={post} />;
+        })}
       </div>
     );
   };

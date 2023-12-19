@@ -1,9 +1,9 @@
 import { getDocs, collection } from "firebase/firestore";
 import { database } from "../../config/firebase";
 import { useEffect, useState } from "react";
-import { FeedPost } from "../../components/feedPost/feedPost";
+import { FeedPost } from "../feedPost/feedPost";
 
-export const LoadPost = ({ path }) => {
+export const useLoadContent = (path) => {
   const postsRef = collection(database, path);
   const [postsList, setPostsList] = useState(null);
 
@@ -20,12 +20,14 @@ export const LoadPost = ({ path }) => {
   useEffect(() => {
     getPosts();
   }, []);
-
-  return (
-    <div>
-      {postsList?.map((post) => {
-        return <FeedPost post={post} />;
-      })}
-    </div>
-  );
+  
+  return [postsList]
+  // return (
+  //   <div>
+  //     {postsList?.map((post) => {
+  //       return <FeedPost post={post} />;
+  //     })}
+  //     {/* {postsList} */}
+  //   </div>
+  // );
 };

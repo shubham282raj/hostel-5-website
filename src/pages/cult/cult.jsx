@@ -1,5 +1,4 @@
 import "./cult.css";
-import "../../components/footerNav/footerNav.css";
 import { FooterNav } from "../../components/footerNav/footerNav";
 import { useLoadContent } from "../../components/loadPost/useLoadContent";
 import { FeedPost } from "../../components/feedPost/feedPost";
@@ -11,7 +10,7 @@ export const Cult = () => {
   //components
   const FeedTab = () => {
     return (
-      <div className="cultFeedTab">
+      <div className="cultFeedTab feedTabContainer">
         <div className="tabName">Feed Tab</div>
         {feedTabContent?.map((post) => {
           return <FeedPost post={post} />;
@@ -21,7 +20,7 @@ export const Cult = () => {
   };
   const GCTab = () => {
     return (
-      <div className="cultFeedTab">
+      <div className="cultGCTab GCTabContainer">
         <div className="tabName">GC Tab</div>
         {gcTabContent?.map((post) => {
           return <FeedPost post={post} />;
@@ -31,7 +30,7 @@ export const Cult = () => {
   };
   const GalaryTab = () => {
     return (
-      <div className="galaryFeedTab">
+      <div className="cultGalaryTab GalaryTabContainer">
         <div className="tabName">Galary Tab</div>
         {galaryTabContent?.map((post) => {
           return <FeedPost post={post} />;

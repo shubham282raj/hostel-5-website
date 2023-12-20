@@ -1,9 +1,49 @@
+#createPostBackButton{
+    font-size: 20px;
+    color: var(--white);
+    padding: 2px 4px;
+    border-radius: 10px;
+    border: 2px solid var(--white);
+    cursor: pointer;
+}
+
+#createPostHeader{
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--white);
+    margin: 30px 10px;
+    display: inline-block;
+}
+
+.createPostSelectMenu{
+    font-size: 20px;
+    color: var(--white);
+}
+.createPostSelectMenu select{
+    font-size: 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+}
+.createPostSelectMenu button{
+    font-size: 20px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 8px;
+    display: block;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
 .registerError{
     color: red;
 }
 
 .councilCreateForm{
-    border: 2px white solid;
+    border: 2px solid var(--white);
     border-radius: 20px;
     padding: 20px;
     display: block;
@@ -24,6 +64,21 @@
     font-size: 20px;
 }
 
+.councilCreateForm input[type="file"]{
+    font-size: 18px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.councilCreateForm input[type="file"]::file-selector-button{
+    font-size: 18px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
 .councilCreateForm textarea{
     font-size: 18px;
     resize:vertical;
@@ -34,7 +89,7 @@
     font-size: 18px;
     padding: 5px 10px;
     border-radius: 15px;
-    background-color: white;
+    background-color: var(--white);
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -43,4 +98,10 @@
 #notLoggedIn{
     font-size: 18px;
     color: var(--white);
+}
+
+@media screen and (max-width: 550px) {
+    .councilCreateForm{
+        border: none;
+    }
 }

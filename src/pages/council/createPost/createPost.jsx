@@ -5,14 +5,6 @@ import "./createPost.css";
 export const CreatePost = () => {
   const divisions = ["cult", "tech", "sports", "mess", "web"];
   const postType = ["feed", "gc", "galary"];
-  //   const divisionObj = {
-  //     cult: ["feed", "gc", "galary"],
-  //     tech: ["feed", "gc", "galary"],
-  //     sports: ["feed", "gc", "galary"],
-  //     mess: ["feed", "gc", "galary"],
-  //     web: ["feed", "gc", "galary"],
-  //   };
-
   const [submitDivision, setSubmitDivision] = useState(false);
   const [divisionSelected, setDivision] = useState(null);
   const [postTypeSelected, setPostType] = useState(null);
@@ -31,20 +23,21 @@ export const CreatePost = () => {
   return (
     <div>
       {submitDivision && (
-        <button
+        <span
           onClick={() => {
             setDivision(null);
             setPostType(null);
             setSubmitDivision(false);
           }}
+          id="createPostBackButton"
         >
-          &#128281;
-        </button>
+          &#60;-
+        </span>
       )}
-      <h2>Create Post</h2>
+      <h2 id="createPostHeader">Create Post</h2>
       {!submitDivision ? (
         <>
-          <form>
+          <form className="createPostSelectMenu">
             <span>Division:</span>
             <select id="divisionSelect">
               <option value={"nullSelect"}>Select Division</option>
@@ -68,12 +61,13 @@ export const CreatePost = () => {
                 );
               })}
             </select>
+            <button onClick={submitFormType}>Submit</button>
           </form>
-          <button onClick={submitFormType}>Submit</button>
+          
         </>
       ) : (
         <>
-          {postTypeSelected === "feed" && (
+          { (
             <CreateFeedForm division={divisionSelected} />
           )}
         </>

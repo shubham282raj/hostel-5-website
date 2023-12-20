@@ -1,12 +1,12 @@
 import { auth, provider } from "../../../config/firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithRedirect, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./login.css";
 import { Link } from "react-router-dom";
 
 export const LoginCouncil = () => {
   const signInWithGoogle = async () => {
-    const result = await signInWithPopup(auth, provider);
+    const result = await signInWithRedirect(auth, provider);
     console.log(result);
     console.log(auth);
   };

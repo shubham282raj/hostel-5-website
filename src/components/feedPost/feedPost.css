@@ -1,7 +1,72 @@
-.feedPostContainer{
-    margin: auto;
-    margin-top: 20px;
-    padding: 10px 5px;
-    border: 2px solid white;
-    max-width: 400px;
+.feedPostContainer {
+  margin: auto;
+}
+.feedPostContainer .feedPostTitle {
+  font-size: 24px;
+}
+
+.feedPostContainer .feedPostImage {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+}
+
+/* #tabContainer{
+    border: 2px solid red;
+}
+
+.tab{
+    border: 2px solid yellow;
+} */
+
+@media screen and (max-width: 550px) {
+  #tabContainer {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+  #tabContainer .tabName {
+    
+    margin-left: 12px;
+    margin-right: 100%;
+    font-size: 24px;
+    padding: 5px 22px;
+    border-radius: 15px;
+    background-color: var(--white);
+    color: var(--black);
+    display: inline-block;
+  }
+  .tab {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    color: var(--white);
+    width: 100vw;
+    min-height: 800px;
+    /* min-height: 100px; */
+    /* border: 2px solid white; */
+  }
+  .postContainer {
+    margin-top: 15px;
+    padding: 12px;
+    max-width: 96%;
+    overflow: hidden;
+    border: 2px solid var(--white);
+    border-radius: 12px;
+  }
+  .feedPostContainer .feedPostTitle {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .feedPostContainer .feedPostImage {
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+  .feedPostContainer .feedPostDescription {
+    text-align: justify;
+    font-size: 18px;
+  }
 }

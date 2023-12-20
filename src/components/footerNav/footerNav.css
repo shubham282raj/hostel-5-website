@@ -30,27 +30,5 @@
     color: white;
     transition: all .4s;
   }
-  #tabContainer {
-    display: flex;
-    scroll-snap-type: x mandatory;
-    scroll-snap-stop: always;
-    overflow: hidden;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    overflow-x: scroll;
-  }
-  #tabContainer .tabName{
-    text-align: left;
-    font-size: 24px;
-    padding: 5px 15px;
-    text-decoration: underline;
-  }
-  .tab {
-    flex-shrink: 0;
-    scroll-snap-align: center;
-    color: white;
-    height: 1200px;
-    width: 100vw;
-    border: 2px solid white;
-  }
+  
 }

@@ -11,19 +11,20 @@ export const Cult = () => {
   const FeedTab = () => {
     return (
       <div className="cultFeedTab feedTabContainer">
-        <div className="tabName">Feed Tab</div>
-        {feedTabContent?.map((post) => {
-          return <FeedPost post={post} />;
+        <div className="tabName">Feed</div>
+        {feedTabContent?.map((post, key) => {
+          return <FeedPost post={post} key={key} />;
         })}
+        {console.log(feedTabContent)}
       </div>
     );
   };
   const GCTab = () => {
     return (
       <div className="cultGCTab GCTabContainer">
-        <div className="tabName">GC Tab</div>
-        {gcTabContent?.map((post) => {
-          return <FeedPost post={post} />;
+        <div className="tabName">GC</div>
+        {gcTabContent?.map((post, key) => {
+          return <FeedPost post={post} key={key} />;
         })}
       </div>
     );
@@ -31,9 +32,9 @@ export const Cult = () => {
   const GalaryTab = () => {
     return (
       <div className="cultGalaryTab GalaryTabContainer">
-        <div className="tabName">Galary Tab</div>
-        {galaryTabContent?.map((post) => {
-          return <FeedPost post={post} />;
+        <div className="tabName">Galary</div>
+        {galaryTabContent?.map((post, key) => {
+          return <FeedPost post={post} key={key} />;
         })}
       </div>
     );

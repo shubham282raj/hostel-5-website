@@ -1,14 +1,14 @@
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, query, orderBy } from "firebase/firestore";
 import { database } from "../../config/firebase";
 import { useEffect, useState } from "react";
-import { FeedPost } from "../feedPost/feedPost";
+// import { FeedPost } from "../feedPost/feedPost";
 
 export const useLoadContent = (path) => {
   const postsRef = collection(database, path);
   const [postsList, setPostsList] = useState(null);
 
   const getPosts = async () => {
-    const data = await getDocs(postsRef);
+    const data = await getDocs(query(postsRef, orderBy("timestamp", "desc")));
     setPostsList(
       data.docs.map((doc) => ({
         ...doc.data(),
@@ -16,6 +16,11 @@ export const useLoadContent = (path) => {
       }))
     );
   };
+
+  // const data = await query(postsRef, orderBy("timestamp", "desc"))
+  // setPostsList(
+
+  // )
 
   useEffect(() => {
     getPosts();

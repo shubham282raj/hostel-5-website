@@ -44,7 +44,7 @@
     scroll-snap-align: center;
     color: var(--white);
     width: 100vw;
-    min-height: 800px;
+    min-height: 100vh;
     /* min-height: 100px; */
     /* border: 2px solid white; */
   }

@@ -13,7 +13,7 @@ export const FeedPost = (props) => {
         src={props.post.imageURL}
         alt="postImage"
       />
-      <div className="feedPostDescription"  onClick={()=>setOpenPost(!openPost)} style={{maxHeight: openPost ? "1000px" : "150px"}}>{props.post.description}</div>
+      <div className="feedPostDescription"  onClick={()=>setOpenPost(!openPost)} style={{maxHeight: openPost ? "1000px" : "150px"}} dangerouslySetInnerHTML={{__html: props.post.description}}/>
       {/* <div className="footer">@{props.post.username}</div> */}
     </div>
   );

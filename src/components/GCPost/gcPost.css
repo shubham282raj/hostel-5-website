@@ -1,0 +1,11 @@
+.gcPostContainer .header{
+    /* display: flex; */
+}
+@media screen and (max-width: 550px) {
+    .gcPostContainer .gcPostScore{
+        font-size: 18px;
+    }
+    .gcPostContainer .gcTeamDetails{
+        text-align: center;
+    }
+}

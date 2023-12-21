@@ -3,6 +3,8 @@ import { FooterNav } from "../../components/footerNav/footerNav";
 import { useLoadContent } from "../../components/loadPost/useLoadContent";
 import { FeedPost } from "../../components/feedPost/feedPost";
 import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnimation";
+import { GCPost } from "../../components/GCPost/gcPost";
+import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
 export const Cult = () => {
   const  [feedTabContent] = useLoadContent("cult/feed/feed")
@@ -26,7 +28,7 @@ export const Cult = () => {
       <div className="cultGCTab GCTabContainer">
         <div className="tabName">GC</div>
         {gcTabContent != (null ) ? (gcTabContent?.map((post, key) => {
-          return <FeedPost post={post} key={key} />;
+          return <GCPost post={post} key={key} />;
         })) : (
           <LoadingAnimation loadingText={true} marginTop="100px"/>
         )}
@@ -38,7 +40,7 @@ export const Cult = () => {
       <div className="cultGalaryTab GalaryTabContainer">
         <div className="tabName">Galary</div>
         {galaryTabContent != (null) ? (galaryTabContent?.map((post, key) => {
-          return <FeedPost post={post} key={key} />;
+          return <GalaryPost post={post} key={key} />;
         })) : (
           <LoadingAnimation loadingText={true} marginTop="100px"/>
         )}

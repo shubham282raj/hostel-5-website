@@ -17,7 +17,7 @@
     --text-color-1: black;
 
     --menu-icon-width: 80%;
-    --menu-icon-height: 6%;
+    --menu-icon-height: 7%;
     --menu-icon-border-radius: 10px;
     --menu-icon-center-color: var(--text-color-1);
     --menu-icon-exteme-color: var(--text-color-1);
@@ -25,4 +25,5 @@
 
     --white: white;
     --black: black;
+    --background-color: darkslategray;
   }

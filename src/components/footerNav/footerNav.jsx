@@ -5,6 +5,7 @@ export const FooterNav = (props) => {
   const handleTabChange = (tab) => {
     const tabContainer = document.getElementById("tabContainer");
     tabContainer.scrollTo(tabContainer.clientWidth * tab, 0);
+    window.scrollTo(0,0)
   };
 
   const handleScrolling = () => {

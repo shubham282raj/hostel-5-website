@@ -9,5 +9,5 @@
   scroll-behavior: smooth;
 }
 body{
-  background-color: darkslategray;
+  background-color: var(--background-color);
 }

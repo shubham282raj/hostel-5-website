@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CreateFeedForm } from "./FormType/createFeedForm";
 import "./createPost.css";
+import { CreateGCForm } from "./FormType/createGCForm";
 
 export const CreatePost = () => {
   const divisions = ["cult", "tech", "sports", "mess", "web"];
@@ -63,12 +64,14 @@ export const CreatePost = () => {
             </select>
             <button onClick={submitFormType}>Submit</button>
           </form>
-          
         </>
       ) : (
         <>
-          { (
+          {postTypeSelected === "feed" && (
             <CreateFeedForm division={divisionSelected} />
+          )}
+          {postTypeSelected === "gc" && (
+            <CreateGCForm division={divisionSelected} />
           )}
         </>
       )}

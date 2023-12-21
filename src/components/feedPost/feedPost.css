@@ -1,11 +1,11 @@
-.feedPostContainer {
+.postContainer {
   margin: auto;
 }
-.feedPostContainer .feedPostTitle {
+.postContainer .postTitle {
   font-size: 24px;
 }
 
-.feedPostContainer .feedPostImage {
+.postContainer .postImage {
   max-width: 100%;
   aspect-ratio: 16/9;
 }
@@ -29,11 +29,11 @@
     overflow-x: scroll;
   }
   #tabContainer .tabName {
-    
-    margin-left: 12px;
+    margin: 8px;
+    margin-left: 10px;
     margin-right: 100%;
-    font-size: 24px;
-    padding: 5px 22px;
+    font-size: 22px;
+    padding: 3px 18px;
     border-radius: 15px;
     background-color: var(--white);
     color: var(--black);
@@ -49,24 +49,42 @@
     /* border: 2px solid white; */
   }
   .postContainer {
-    margin-top: 15px;
+    /* margin-top: 5px; */
+    margin-bottom: 8px;
     padding: 12px;
+    padding-bottom: 0px;
     max-width: 96%;
     overflow: hidden;
+    /* border-bottom: 2px solid var(--white);
+    border-top: 2px solid var(--white); */
     border: 2px solid var(--white);
     border-radius: 12px;
   }
-  .feedPostContainer .feedPostTitle {
-    font-size: 22px;
+  .postContainer .postTitle {
+    font-size: 21px;
     font-weight: bold;
     text-align: left;
+    /* border-bottom: 2px solid white;
+    border-radius: 10px; */
   }
-  .feedPostContainer .feedPostImage {
+  .postContainer .postImage {
     margin: 10px 0;
     border-radius: 10px;
   }
-  .feedPostContainer .feedPostDescription {
+  .postContainer .contentToHide {
     text-align: justify;
-    font-size: 18px;
+    font-size: 17px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transition: all 1s;
+  }
+  .postContainer .toggleRead {
+    display: inline-block;
+    padding: 0px 5px;
+    border-radius: 10px;
+    border: 2px solid var(--white);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: none;
   }
 }

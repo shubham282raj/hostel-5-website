@@ -3,7 +3,6 @@ import './App.css';
 import { Navbar } from './components/navbar/Navbar';
 import { Home } from './pages/home/home';
 import { Tech } from './pages/tech/tech';
-import { Web } from './pages/web/web';
 import { Cult } from './pages/cult/cult';
 import { Sports } from './pages/sports/sports';
 import { Mess } from './pages/mess/mess';
@@ -19,7 +18,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/> 
           <Route path='/tech' element={<Tech/>}/> 
-          <Route path='/web' element={<Web/>}/> 
           <Route path='/cult' element={<Cult/>}/>
           <Route path='/sports' element={<Sports/>}/> 
           <Route path='/mess' element={<Mess/>}/> 
@@ -30,7 +28,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
-    
+      <div className='footerNavMargin'></div>
     </div>
   );
 }

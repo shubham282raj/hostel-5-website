@@ -2,18 +2,17 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, database } from "../../../../config/firebase";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { collection } from "firebase/firestore"
+import { collection } from "firebase/firestore";
 import * as yup from "yup";
 import { addDoc, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import {storage} from "../../../../config/firebase"
-import {getDownloadURL, ref, uploadBytes} from "firebase/storage"
+import { storage } from "../../../../config/firebase";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
-import {v4} from "uuid"
+import { v4 } from "uuid";
+// import { useSpreadSheet } from "./useSpreadSheet";
 
-
-export const useCreateForm = (schema, path) => {
-
+export const useCreateForm = (schema, division, type) => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -28,47 +27,82 @@ export const useCreateForm = (schema, path) => {
     resolver: yupResolver(yup.object().shape(schema)),
   });
 
-  const collectionRef = collection(database, path);
+  const collectionRef = collection(database, `${division}/${type}/${type}`);
 
-  const [imageUpload, setImageUpload] = useState(null);
+  const [documentUpload, setDocumentUpload] = useState(null);
 
-  const uploadImage = async () => {
-    if (imageUpload == null) {
+  // const [handleExcelFile] = useSpreadSheet();
+
+  const uploaddocument = async () => {
+    if (documentUpload == null) {
       return null;
     }
-    const imageRef = await ref(storage, `cult/feed/${imageUpload.name + v4()}`);
-    
-    await uploadBytes(imageRef, imageUpload)
-    
-    return await getDownloadURL(imageRef).then((url)=>{
+    const documentRef = await ref(
+      storage,
+      `${division}/${type}/${documentUpload.name + v4()}`
+    );
+
+    await uploadBytes(documentRef, documentUpload);
+
+    return await getDownloadURL(documentRef).then((url) => {
       return url;
-    })
+    });
   };
 
   const onCreatePost = async (data) => {
+    setLoading(true);
 
-    setLoading(true)
+    const documentURL = await uploaddocument();
 
-    const imageURL = await uploadImage();
-    
-    if(imageURL == null){
+    console.log(documentURL);
+
+    if (documentURL == null) {
       return;
-    } 
+    }
 
     await addDoc(collectionRef, {
       //   title: data.title,
       //   description: data.description,
       ...data, //instead of the above two lines
-      imageURL: imageURL,
+      imageURL: documentURL,
       username: user?.displayName,
       userId: user?.uid,
       timestamp: serverTimestamp(),
     });
 
-    setLoading(false)
+    setLoading(false);
 
     navigate("/council/login");
   };
 
-  return [user, setImageUpload, onCreatePost, register, handleSubmit, errors, loading]
+  const onCreateMessMenu = async (data) => {
+    setLoading(true);
+
+    console.log(documentUpload)
+    
+    await addDoc(collectionRef, {
+      //   title: data.title,
+      //   description: data.description,
+      ...data, //instead of the above two lines
+      ...documentUpload,
+      username: user?.displayName,
+      userId: user?.uid,
+      timestamp: serverTimestamp(),
+    });
+
+    setLoading(false);
+
+    navigate("/council/login");
+  };
+
+  return {
+    user,
+    setDocumentUpload,
+    onCreatePost,
+    register,
+    handleSubmit,
+    errors,
+    loading,
+    onCreateMessMenu
+  };
 };

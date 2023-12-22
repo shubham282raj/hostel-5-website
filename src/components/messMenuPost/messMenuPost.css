@@ -1,0 +1,50 @@
+@media screen and (max-width: 550px) {
+  .messMenuPostContainer {
+    border: none;
+  }
+
+  .messMenuPostContainer .messMenuDayContainer {
+    /* border: 2px solid red; */
+    margin-top: 20px;
+    /* border-top-left-radius: 20px; */
+    border-radius: 20px;
+    /* border-top-right-radius: 0;
+      border-bottom-left-radius: 0; */
+    border-top: 2px solid white;
+    /* border-bottom: 2px solid white; */
+    /* border-right: 2px solid transparent; */
+    /* border: 2px solid white; */
+  }
+
+  .messMenuPostContainer .messMenuDayName {
+    /* border: 2px solid yellow; */
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 100%;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  .messMenuPostContainer .messMenuMealSlot {
+    /* border: 2px solid lightblue; */
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    /* text-decoration: underline; */
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  .messMenuPostContainer .messMenuMeal {
+    /* border: 2px solid green; */
+    font-size: 17px;
+  }
+}

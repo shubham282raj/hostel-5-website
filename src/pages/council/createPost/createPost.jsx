@@ -2,10 +2,11 @@ import { useState } from "react";
 import { CreateFeedForm } from "./FormType/createFeedForm";
 import "./createPost.css";
 import { CreateGCForm } from "./FormType/createGCForm";
+import { CreateMessMenu } from "./FormType/createMessMenu";
 
 export const CreatePost = () => {
   const divisions = ["cult", "tech", "sports", "mess", "web"];
-  const postType = ["feed", "gc", "galary"];
+  const postType = ["feed", "gc", "galary", "messMenu"];
   const [submitDivision, setSubmitDivision] = useState(false);
   const [divisionSelected, setDivision] = useState(null);
   const [postTypeSelected, setPostType] = useState(null);
@@ -72,6 +73,9 @@ export const CreatePost = () => {
           )}
           {postTypeSelected === "gc" && (
             <CreateGCForm division={divisionSelected} />
+          )}
+          {postTypeSelected === "messMenu" && (
+            <CreateMessMenu division={divisionSelected} />
           )}
         </>
       )}

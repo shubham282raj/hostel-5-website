@@ -9,10 +9,15 @@ export const CreateGCForm = ({ division }) => {
     description: yup.string().required("You must give a description"),
   };
 
-  const [user, setImageUpload, onCreatePost, register, handleSubmit, errors, loading] = useCreateForm(
-    schema,
-    `${division}/gc/gc`
-  );
+  const [
+    user,
+    setImageUpload,
+    onCreatePost,
+    register,
+    handleSubmit,
+    errors,
+    loading,
+  ] = useCreateForm(schema, division, "gc");
 
   return (
     <>
@@ -23,7 +28,11 @@ export const CreateGCForm = ({ division }) => {
         >
           <input placeholder="Title..." {...register("title")} type="text" />
           <p className="registerError">{errors.title?.message}</p>
-          <input placeholder="GC Points..." {...register("score")} type="text" />
+          <input
+            placeholder="GC Points..."
+            {...register("score")}
+            type="text"
+          />
           <p className="registerError">{errors.score?.message}</p>
           <input
             type="file"
@@ -32,7 +41,10 @@ export const CreateGCForm = ({ division }) => {
               setImageUpload(event.target.files[0]);
             }}
           />
-          <textarea placeholder="Team Details..." {...register("teamDetails")} />
+          <textarea
+            placeholder="Team Details..."
+            {...register("teamDetails")}
+          />
           <p className="registerError">{errors.teamDetails?.message}</p>
           <textarea placeholder="Description..." {...register("description")} />
           <p className="registerError">{errors.description?.message}</p>

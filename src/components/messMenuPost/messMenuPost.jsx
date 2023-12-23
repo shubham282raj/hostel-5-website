@@ -12,16 +12,24 @@ export const MessMenuPost = (props) => {
     "SUNDAY",
   ];
 
+  const dayToday = daysList.indexOf(
+    new Date(Date.now())
+      .toLocaleDateString("en-US", { weekday: "long" })
+      .toUpperCase()
+  );
+
   return (
     <div className="messMenuPostContainer postContainer">
       <div className="messMenuPostTitle postTitle">{props.post.title}</div>
       <div className="messMenuPost">
         {daysList.map((day, index) => {
-          console.log(day);
           return (
             <div
               key={index}
-              dangerouslySetInnerHTML={{ __html: props.post[day] }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  props.post[daysList[(index + dayToday) % daysList.length]],
+              }}
             />
           );
         })}

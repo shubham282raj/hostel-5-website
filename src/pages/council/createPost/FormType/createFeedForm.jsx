@@ -2,12 +2,13 @@ import * as yup from "yup";
 import { useCreateForm } from "../component/useCreateForm";
 
 export const CreateFeedForm = ({ division }) => {
+
   const schema = {
     title: yup.string().required("You must add a title"),
     description: yup.string().required("You must give a description"),
   };
 
-  const [
+  const {
     user,
     setImageUpload,
     onCreatePost,
@@ -15,7 +16,7 @@ export const CreateFeedForm = ({ division }) => {
     handleSubmit,
     errors,
     loading,
-  ] = useCreateForm(schema, division, "feed");
+ } = useCreateForm(schema, division, "feed");
 
   return (
     <>

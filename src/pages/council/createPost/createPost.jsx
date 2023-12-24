@@ -1,84 +1,61 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CreateFeedForm } from "./FormType/createFeedForm";
 import "./createPost.css";
 import { CreateGCForm } from "./FormType/createGCForm";
 import { CreateMessMenu } from "./FormType/createMessMenu";
 
 export const CreatePost = () => {
-  const divisions = ["cult", "tech", "sports", "mess", "web"];
-  const postType = ["feed", "gc", "galary", "messMenu"];
-  const [submitDivision, setSubmitDivision] = useState(false);
-  const [divisionSelected, setDivision] = useState(null);
-  const [postTypeSelected, setPostType] = useState(null);
-
-  const submitFormType = () => {
-    const divisionSelect = document.querySelector("#divisionSelect")?.value;
-    const postTypeSelect = document.querySelector("#postTypeSelect")?.value;
-
-    if (divisionSelect !== "nullSelect" && postTypeSelect !== "nullSelect") {
-      setDivision(divisionSelect);
-      setPostType(postTypeSelect);
-      setSubmitDivision(true);
-    }
+  const divisionObject = {
+    cult: ["home", "feed", "gc", "galary"],
+    tech: ["home", "feed", "gc", "galary"],
+    sports: ["home", "feed", "gc", "galary"],
+    mess: ["home", "messMenu"],
+    council: ["home", "coordinators", "secretary"],
   };
+
+  const [division, setDivision] = useState("");
+  const [postType, setPostType] = useState("");
+
+  useEffect(() => {
+    console.log(division, postType)
+  }, [division]);
 
   return (
     <div>
-      {submitDivision && (
-        <span
-          onClick={() => {
-            setDivision(null);
-            setPostType(null);
-            setSubmitDivision(false);
-          }}
-          id="createPostBackButton"
-        >
-          &#60;-
-        </span>
-      )}
+      {/* {divisionSubmit && <span>&#60;-</span>} */}
       <h2 id="createPostHeader">Create Post</h2>
-      {!submitDivision ? (
-        <>
-          <form className="createPostSelectMenu">
-            <span>Division:</span>
-            <select id="divisionSelect">
-              <option value={"nullSelect"}>Select Division</option>
-              {divisions.map((division, key) => {
-                return (
-                  <option value={division} key={key}>
-                    {division}
-                  </option>
-                );
-              })}
-            </select>
-            <br></br>
-            <span>Post Type:</span>
-            <select id="postTypeSelect">
-              <option value={"nullSelect"}>Select Post Type</option>
-              {postType.map((type, key) => {
-                return (
-                  <option value={type} key={key}>
-                    {type}
-                  </option>
-                );
-              })}
-            </select>
-            <button onClick={submitFormType}>Submit</button>
-          </form>
-        </>
-      ) : (
-        <>
-          {postTypeSelected === "feed" && (
-            <CreateFeedForm division={divisionSelected} />
-          )}
-          {postTypeSelected === "gc" && (
-            <CreateGCForm division={divisionSelected} />
-          )}
-          {postTypeSelected === "messMenu" && (
-            <CreateMessMenu division={divisionSelected} />
-          )}
-        </>
-      )}
+      <>
+        <div className="createPostSelectMenu">
+          <span>Division:</span>
+          <select
+            id="divisionSelect"
+            onChange={(e) => setDivision(e.target.value)}
+          >
+            <option>Select Division</option>
+            {Object.keys(divisionObject).map((key) => (
+              <option value={key} key={key}>
+                {key}
+              </option>
+            ))}
+          </select>
+          <br></br>
+          <span>Post Type:</span>
+          <select
+            id="postTypeSelect"
+            onChange={(e) => setPostType(e.target.value)}
+          >
+            <option>Select Post Type</option>
+            {divisionObject[division]?.map((value) => (
+              <option key={value} value={value}>
+                {value}
+              </option>
+            ))}
+          </select>
+        </div>
+        {postType === "feed" && <CreateFeedForm division={division} />}
+        {postType === "gc" && <CreateGCForm division={division} />}
+        {postType === "messMenu" && <CreateMessMenu division={division} />}
+      </>
     </div>
   );
 };

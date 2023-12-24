@@ -9,7 +9,7 @@ export const CreateGCForm = ({ division }) => {
     description: yup.string().required("You must give a description"),
   };
 
-  const [
+  const {
     user,
     setImageUpload,
     onCreatePost,
@@ -17,7 +17,7 @@ export const CreateGCForm = ({ division }) => {
     handleSubmit,
     errors,
     loading,
-  ] = useCreateForm(schema, division, "gc");
+   } = useCreateForm(schema, division, "gc");
 
   return (
     <>

@@ -7,10 +7,22 @@ import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
 export const Sports = () => {
+  const  [homeTabContainer] = useLoadContent("sports/home/home")
   const  [feedTabContent] = useLoadContent("sports/feed/feed")
   const  [gcTabContent] = useLoadContent("sports/gc/gc")
   const  [galaryTabContent] = useLoadContent("sports/galary/galary")
   //components
+  const HomeTab = () => {
+    return(
+      <div className="sportsHomeTab homeTabContainer">
+        {homeTabContainer !== (null)? (homeTabContainer?.map((post, key) => {
+          return <HomeTab post={post} key={key} />;
+        })) : (
+          <LoadingAnimation loadingText={true} marginTop="100px"/>
+        )}
+      </div>
+    )
+  }
   const FeedTab = () => {
     return (
       <div className="sportsFeedTab feedTabContainer">
@@ -52,8 +64,8 @@ export const Sports = () => {
     <div>
       {/* the class which containes the tabs has id "tabContainer" */}
       <FooterNav
-        tabComponents={[<FeedTab />, <GCTab />, <GalaryTab />]}
-        tabLabels={["Feed", "GC", "Galary"]}
+        tabComponents={[<HomeTab />, <FeedTab />, <GCTab />, <GalaryTab />]}
+        tabLabels={["Sports", "Feed", "GC", "Galary"]}
       />
     </div>
   );

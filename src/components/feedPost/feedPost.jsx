@@ -18,7 +18,6 @@ export const FeedPost = (props) => {
       >
         <div
           className="feedPostDescription postDescription"
-          style={{ maxHeight: openPost ? "fit-content" : "105px" }}
           dangerouslySetInnerHTML={{ __html: props.post.description }}
         />
       </div>

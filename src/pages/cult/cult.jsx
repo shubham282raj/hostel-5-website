@@ -7,18 +7,34 @@ import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
 export const Cult = () => {
-  const  [feedTabContent] = useLoadContent("cult/feed/feed")
-  const  [gcTabContent] = useLoadContent("cult/gc/gc")
-  const  [galaryTabContent] = useLoadContent("cult/galary/galary")
+  const [homeTabContainer] = useLoadContent("cult/home/home");
+  const [feedTabContent] = useLoadContent("cult/feed/feed");
+  const [gcTabContent] = useLoadContent("cult/gc/gc");
+  const [galaryTabContent] = useLoadContent("cult/galary/galary");
   //components
+  const HomeTab = () => {
+    return (
+      <div className="cultHomeTab homeTabContainer">
+        {homeTabContainer !== null ? (
+          homeTabContainer?.map((post, key) => {
+            return <HomeTab post={post} key={key} />;
+          })
+        ) : (
+          <LoadingAnimation loadingText={true} marginTop="100px" />
+        )}
+      </div>
+    );
+  };
   const FeedTab = () => {
     return (
       <div className="cultFeedTab feedTabContainer">
         <div className="tabName">Feed</div>
-        {feedTabContent !== (null)? (feedTabContent?.map((post, key) => {
-          return <FeedPost post={post} key={key} />;
-        })) : (
-          <LoadingAnimation loadingText={true} marginTop="100px"/>
+        {feedTabContent !== null ? (
+          feedTabContent?.map((post, key) => {
+            return <FeedPost post={post} key={key} />;
+          })
+        ) : (
+          <LoadingAnimation loadingText={true} marginTop="100px" />
         )}
       </div>
     );
@@ -27,10 +43,12 @@ export const Cult = () => {
     return (
       <div className="cultGCTab GCTabContainer">
         <div className="tabName">GC</div>
-        {gcTabContent != (null ) ? (gcTabContent?.map((post, key) => {
-          return <GCPost post={post} key={key} />;
-        })) : (
-          <LoadingAnimation loadingText={true} marginTop="100px"/>
+        {gcTabContent != null ? (
+          gcTabContent?.map((post, key) => {
+            return <GCPost post={post} key={key} />;
+          })
+        ) : (
+          <LoadingAnimation loadingText={true} marginTop="100px" />
         )}
       </div>
     );
@@ -39,10 +57,12 @@ export const Cult = () => {
     return (
       <div className="cultGalaryTab GalaryTabContainer">
         <div className="tabName">Galary</div>
-        {galaryTabContent != (null) ? (galaryTabContent?.map((post, key) => {
-          return <GalaryPost post={post} key={key} />;
-        })) : (
-          <LoadingAnimation loadingText={true} marginTop="100px"/>
+        {galaryTabContent != null ? (
+          galaryTabContent?.map((post, key) => {
+            return <GalaryPost post={post} key={key} />;
+          })
+        ) : (
+          <LoadingAnimation loadingText={true} marginTop="100px" />
         )}
       </div>
     );
@@ -52,8 +72,8 @@ export const Cult = () => {
     <div>
       {/* the class which containes the tabs has id "tabContainer" */}
       <FooterNav
-        tabComponents={[<FeedTab />, <GCTab />, <GalaryTab />]}
-        tabLabels={["Feed", "GC", "Galary"]}
+        tabComponents={[<HomeTab />, <FeedTab />, <GCTab />, <GalaryTab />]}
+        tabLabels={["Cult", "Feed", "GC", "Galary"]}
       />
     </div>
   );

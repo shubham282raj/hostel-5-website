@@ -10,7 +10,7 @@ export const CreateFeedForm = ({ division }) => {
 
   const {
     user,
-    setImageUpload,
+    setDocumentUpload,
     onCreatePost,
     register,
     handleSubmit,
@@ -31,7 +31,7 @@ export const CreateFeedForm = ({ division }) => {
             type="file"
             accept="image/*"
             onChange={(event) => {
-              setImageUpload(event.target.files[0]);
+              setDocumentUpload(event.target.files[0]);
             }}
           />
           <textarea placeholder="Description..." {...register("description")} />

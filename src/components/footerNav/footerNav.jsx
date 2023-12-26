@@ -10,6 +10,7 @@ export const FooterNav = (props) => {
 
   const handleScrolling = () => {
     const tabContainer = document.getElementById("tabContainer");
+    // tabContainer.scrollTo(0, 0)
     const rem = tabContainer.scrollLeft / tabContainer.clientWidth;
     const nav = document.getElementsByName("footNavRadio");
       nav[Math.round(rem)].checked = true;

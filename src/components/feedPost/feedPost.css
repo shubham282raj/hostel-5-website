@@ -88,4 +88,11 @@
     border-bottom-right-radius: 0px;
     border-bottom: none;
   }
+  .tabLoadMoreBtn{
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--white);
+    font-size: 16px;
+  }
 }

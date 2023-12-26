@@ -7,21 +7,19 @@ import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
 export const Cult = () => {
-  const [homeTabContainer] = useLoadContent("cult/home/home");
-  const [feedTabContent] = useLoadContent("cult/feed/feed");
-  const [gcTabContent] = useLoadContent("cult/gc/gc");
-  const [galaryTabContent] = useLoadContent("cult/galary/galary");
+  const [home] = useLoadContent("cult/home/home");
+  const [feed] = useLoadContent("cult/feed/feed");
+  const [gc] = useLoadContent("cult/gc/gc");
+  const [galary] = useLoadContent("cult/galary/galary");
   //components
   const HomeTab = () => {
     return (
       <div className="cultHomeTab homeTabContainer">
-        {homeTabContainer !== null ? (
-          homeTabContainer?.map((post, key) => {
-            return <HomeTab post={post} key={key} />;
-          })
-        ) : (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
-        )}
+        {home.postsList?.map((post, key) => {
+          return <FeedPost post={post} key={key} />;
+        })}
+        {home.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
+        {home.hasMore && <button className="tabLoadMoreBtn" onClick={home.loadMore}>Load More</button>}
       </div>
     );
   };
@@ -29,13 +27,11 @@ export const Cult = () => {
     return (
       <div className="cultFeedTab feedTabContainer">
         <div className="tabName">Feed</div>
-        {feedTabContent !== null ? (
-          feedTabContent?.map((post, key) => {
-            return <FeedPost post={post} key={key} />;
-          })
-        ) : (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
-        )}
+        {feed.postsList?.map((post, key) => {
+          return <FeedPost post={post} key={key} />;
+        })}
+        {feed.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
+        {feed.hasMore && <button className="tabLoadMoreBtn" onClick={feed.loadMore}>Load More</button>}
       </div>
     );
   };
@@ -43,13 +39,11 @@ export const Cult = () => {
     return (
       <div className="cultGCTab GCTabContainer">
         <div className="tabName">GC</div>
-        {gcTabContent != null ? (
-          gcTabContent?.map((post, key) => {
-            return <GCPost post={post} key={key} />;
-          })
-        ) : (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
-        )}
+        {gc.postsList?.map((post, key) => {
+          return <GCPost post={post} key={key} />;
+        })}
+        {gc.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
+        {gc.hasMore && <button className="tabLoadMoreBtn" onClick={gc.loadMore}>Load More</button>}
       </div>
     );
   };
@@ -57,13 +51,11 @@ export const Cult = () => {
     return (
       <div className="cultGalaryTab GalaryTabContainer">
         <div className="tabName">Galary</div>
-        {galaryTabContent != null ? (
-          galaryTabContent?.map((post, key) => {
-            return <GalaryPost post={post} key={key} />;
-          })
-        ) : (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
-        )}
+        {galary.postsList?.map((post, key) => {
+          return <GalaryPost post={post} key={key} />;
+        })}
+        {galary.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
+        {galary.hasMore && <button className="tabLoadMoreBtn" onClick={galary.loadMore}>Load More</button>}
       </div>
     );
   };

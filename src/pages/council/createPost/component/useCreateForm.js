@@ -29,20 +29,20 @@ export const useCreateForm = (schema, division, type) => {
 
   const collectionRef = collection(database, `${division}/${type}/${type}`);
 
-  const [documentUpload, setDocumentUpload] = useState(null);
+  const [documentUpload, setDocumentUpload] = useState([]);
 
   // const [handleExcelFile] = useSpreadSheet();
 
-  const uploaddocument = async () => {
-    if (documentUpload == null) {
+  const uploaddocument = async (doc) => {
+    if (doc == null) {
       return null;
     }
     const documentRef = await ref(
       storage,
-      `${division}/${type}/${documentUpload.name + v4()}`
+      `${division}/${type}/${doc.name + v4()}`
     );
 
-    await uploadBytes(documentRef, documentUpload);
+    await uploadBytes(documentRef, doc);
 
     return await getDownloadURL(documentRef).then((url) => {
       return url;
@@ -52,11 +52,26 @@ export const useCreateForm = (schema, division, type) => {
   const onCreatePost = async (data) => {
     setLoading(true);
 
-    const documentURL = await uploaddocument();
+    let documentURL = {};
 
-    console.log(documentURL);
+    await Promise.all(
+      documentUpload.map(async (doc, key) => {
+        const newURL = await uploaddocument(doc);
+        
+        if(key===0){
+          documentURL['imageURL'] = newURL;
+        }else{
+          documentURL[`imageURL${key}`] = newURL;
+        }
 
-    if (documentURL == null) {
+      })
+    );
+
+    // console.log(documentURL)
+    // return
+
+    if (Object.keys(documentURL).length === 0) {
+      setLoading(false);
       return;
     }
 
@@ -64,7 +79,7 @@ export const useCreateForm = (schema, division, type) => {
       //   title: data.title,
       //   description: data.description,
       ...data, //instead of the above two lines
-      imageURL: documentURL,
+      ...documentURL,
       username: user?.displayName,
       userId: user?.uid,
       timestamp: serverTimestamp(),
@@ -78,8 +93,8 @@ export const useCreateForm = (schema, division, type) => {
   const onCreateMessMenu = async (data) => {
     setLoading(true);
 
-    console.log(documentUpload)
-    
+    console.log(documentUpload);
+
     await addDoc(collectionRef, {
       //   title: data.title,
       //   description: data.description,
@@ -103,6 +118,6 @@ export const useCreateForm = (schema, division, type) => {
     handleSubmit,
     errors,
     loading,
-    onCreateMessMenu
+    onCreateMessMenu,
   };
 };

@@ -1,11 +1,10 @@
 import * as yup from "yup";
 import { useCreateForm } from "../component/useCreateForm";
+import { useState } from "react";
 
-export const CreateGCForm = ({ division }) => {
+export const CreateGalaryForm = ({ division }) => {
   const schema = {
     title: yup.string().required("You must add a title"),
-    score: yup.string().max(10, "Maximum 10 Characters Allowed"),
-    teamDetails: yup.string().required("Please enter team details points"),
     description: yup.string().required("You must give a description"),
   };
 
@@ -17,7 +16,9 @@ export const CreateGCForm = ({ division }) => {
     handleSubmit,
     errors,
     loading,
-   } = useCreateForm(schema, division, "gc");
+  } = useCreateForm(schema, division, "galary");
+
+  const [imageCount, setImageCount] = useState([1, 1]);
 
   return (
     <>
@@ -28,24 +29,17 @@ export const CreateGCForm = ({ division }) => {
         >
           <input placeholder="Title..." {...register("title")} type="text" />
           <p className="registerError">{errors.title?.message}</p>
-          <input
-            placeholder="GC Points..."
-            {...register("score")}
-            type="text"
-          />
-          <p className="registerError">{errors.score?.message}</p>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(event) => {
-              setDocumentUpload((prev)=>[...prev,event.target.files[0]]);
-            }}
-          />
-          <textarea
-            placeholder="Team Details..."
-            {...register("teamDetails")}
-          />
-          <p className="registerError">{errors.teamDetails?.message}</p>
+          {imageCount.map((value, key) => {
+            return<input
+              key={key}
+              type="file"
+              accept="image/*"
+              onChange={(event) => {
+                setDocumentUpload((prev)=>[...prev,event.target.files[0]]);
+              }}
+            />;
+          })}
+          {<div className="addMore" onClick={()=>setImageCount(prev=>[...prev,1])}>Add More</div>}
           <textarea placeholder="Description..." {...register("description")} />
           <p className="registerError">{errors.description?.message}</p>
           <input type="submit" value={loading ? "Uploading" : "Submit"} />

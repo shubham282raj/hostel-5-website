@@ -76,7 +76,16 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
+}
 
+.councilCreateForm .addMore{
+    border: 2px solid var(--white);
+    color: var(--white);
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .councilCreateForm textarea{

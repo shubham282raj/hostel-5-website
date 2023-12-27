@@ -13,6 +13,7 @@ export const GCPost = (props) => {
         )}
       </div>
       <img
+        loading="lazy"
         className="gcPostImage postImage"
         src={props.post.imageURL}
         alt="postImage"

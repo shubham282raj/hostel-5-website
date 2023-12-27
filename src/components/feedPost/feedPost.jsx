@@ -8,6 +8,7 @@ export const FeedPost = (props) => {
     <div className="feedPostContainer postContainer">
       <div className="feedPostTitle postTitle">{props.post.title}</div>
       <img
+        loading="lazy"
         className="feedPostImage postImage"
         src={props.post.imageURL}
         alt="postImage"

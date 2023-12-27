@@ -3,6 +3,7 @@ import { CreateFeedForm } from "./FormType/createFeedForm";
 import "./createPost.css";
 import { CreateGCForm } from "./FormType/createGCForm";
 import { CreateMessMenu } from "./FormType/createMessMenu";
+import { CreateGalaryForm } from "./FormType/createGalaryPost";
 
 export const CreatePost = () => {
   const divisionObject = {
@@ -55,6 +56,7 @@ export const CreatePost = () => {
         {postType === "feed" && <CreateFeedForm division={division} />}
         {postType === "gc" && <CreateGCForm division={division} />}
         {postType === "messMenu" && <CreateMessMenu division={division} />}
+        {postType === "galary" && <CreateGalaryForm division={division} />}
       </>
     </div>
   );

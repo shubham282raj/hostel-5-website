@@ -31,7 +31,7 @@ export const CreateFeedForm = ({ division }) => {
             type="file"
             accept="image/*"
             onChange={(event) => {
-              setDocumentUpload(event.target.files[0]);
+              setDocumentUpload((prev)=>[...prev,event.target.files[0]]);
             }}
           />
           <textarea placeholder="Description..." {...register("description")} />

@@ -26,7 +26,7 @@
     overflow: hidden;
     flex-wrap: nowrap;
     overflow: hidden;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
   }
   #tabContainer .tabName {
     margin: 8px;

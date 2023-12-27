@@ -1,0 +1,15 @@
+.postContainer .galaryScroller{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    /* border: 2px solid red; */
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+}
+
+.postContainer .galaryScroller .postImage{
+    max-width: 90%;
+    margin-right: 8px;
+    scroll-snap-align: start;
+}

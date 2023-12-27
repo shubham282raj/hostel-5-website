@@ -24,7 +24,7 @@ export const useLoadContent = (path, limitLoad = 3) => {
       query(postsRef, orderBy("timestamp", "desc"), limit(limitLoad))
     );
 
-    if (data.empty) {
+    if (data.empty || data.docs.length<limitLoad) {
       setHasMore(false);
     } else {
       setHasMore(true);

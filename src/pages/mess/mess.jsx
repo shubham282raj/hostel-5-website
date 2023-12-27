@@ -3,15 +3,20 @@ import { FooterNav } from "../../components/footerNav/footerNav";
 import { useLoadContent } from "../../components/loadPost/useLoadContent";
 import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnimation";
 import { MessMenuPost } from "../../components/messMenuPost/messMenuPost";
+import { FeedPost } from "../../components/feedPost/feedPost";
 
 export const Mess = () => {
+  const  [home] = useLoadContent("mess/feed/feed", 10)
   const  [mess] = useLoadContent("mess/menu/menu", 1)
   //components
-  const FeedTab = () => {
+  const HomeTab = () => {
     return (
-      <div className="messFeedTab feedTabContainer">
-        <div className="tabName">Feed</div>
-        
+      <div className="cultHomeTab homeTabContainer">
+        {home.postsList?.map((post, key) => {
+          return <FeedPost post={post} key={key} />;
+        })}
+        {home.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
+        {home.hasMore && <button className="tabLoadMoreBtn" onClick={home.loadMore}>Load More</button>}
       </div>
     );
   };
@@ -27,21 +32,13 @@ export const Mess = () => {
       </div>
     );
   };
-  const GalaryTab = () => {
-    return (
-      <div className="messGalaryTab GalaryTabContainer">
-        <div className="tabName">Galary</div>
-        
-      </div>
-    );
-  };
   //the main return
   return (
     <div>
       {/* the class which containes the tabs has id "tabContainer" */}
       <FooterNav
-        tabComponents={[<FeedTab />, <MessMenuTab />, <GalaryTab />]}
-        tabLabels={["Feed", "Menu", "Galary"]}
+        tabComponents={[<HomeTab />, <MessMenuTab />]}
+        tabLabels={["Mess", "Menu"]}
       />
     </div>
   );

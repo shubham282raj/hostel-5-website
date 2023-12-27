@@ -79,6 +79,9 @@
     margin-bottom: 10px;
     transition: all 1s;
   }
+  .postContainer a{
+    color: orange;
+  }
   .postContainer .toggleRead {
     display: inline-block;
     padding: 0px 5px;

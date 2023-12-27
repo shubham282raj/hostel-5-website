@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import "./login.css";
 import { Link } from "react-router-dom";
 
-export const LoginCouncil = () => {
+const LoginCouncil = () => {
   const signInWithGoogle = async () => {
     const result = await signInWithRedirect(auth, provider);
     console.log(result);
@@ -47,3 +47,5 @@ export const LoginCouncil = () => {
     </div>
   );
 };
+
+export default LoginCouncil;

@@ -5,7 +5,7 @@ import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnima
 import { MessMenuPost } from "../../components/messMenuPost/messMenuPost";
 import { FeedPost } from "../../components/feedPost/feedPost";
 
-export const Mess = () => {
+const Mess = () => {
   const  [home] = useLoadContent("mess/feed/feed", 10)
   const  [mess] = useLoadContent("mess/menu/menu", 1)
   //components
@@ -43,3 +43,5 @@ export const Mess = () => {
     </div>
   );
 };
+
+export default Mess;

@@ -6,7 +6,7 @@ import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnima
 import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
-export const Cult = () => {
+const Cult = () => {
   const [home] = useLoadContent("cult/home/home");
   const [feed] = useLoadContent("cult/feed/feed");
   const [gc] = useLoadContent("cult/gc/gc");
@@ -70,3 +70,5 @@ export const Cult = () => {
     </div>
   );
 };
+
+export default Cult;

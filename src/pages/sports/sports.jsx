@@ -6,7 +6,7 @@ import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnima
 import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
-export const Sports = () => {
+const Sports = () => {
   const [home] = useLoadContent("sports/home/home");
   const [feed] = useLoadContent("sports/feed/feed");
   const [gc] = useLoadContent("sports/gc/gc");
@@ -70,3 +70,5 @@ export const Sports = () => {
     </div>
   );
 };
+
+export default Sports;

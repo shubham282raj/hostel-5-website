@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
 
-export const Council = () => {
+const Council = () => {
 
     const navigate = useNavigate();
 
@@ -10,3 +10,5 @@ export const Council = () => {
         <button onClick={()=>navigate('login')}>Go to login Page</button>
     </div>
 }
+
+export default Council;

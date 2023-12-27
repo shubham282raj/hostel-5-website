@@ -78,6 +78,7 @@ export const useLoadContent = (path, limitLoad = 3) => {
 
   useEffect(() => {
     getPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return [{postsList, hasMore, loadMore, loading}];

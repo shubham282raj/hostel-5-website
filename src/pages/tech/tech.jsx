@@ -6,7 +6,7 @@ import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnima
 import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
-export const Tech = () => {
+const Tech = () => {
   const [home] = useLoadContent("tech/home/home");
   const [feed] = useLoadContent("tech/feed/feed");
   const [gc] = useLoadContent("tech/gc/gc");
@@ -70,3 +70,5 @@ export const Tech = () => {
     </div>
   );
 };
+
+export default Tech;

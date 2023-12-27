@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { CreateFeedForm } from "./FormType/createFeedForm";
 import "./createPost.css";
 import { CreateGCForm } from "./FormType/createGCForm";
 import { CreateMessMenu } from "./FormType/createMessMenu";
 import { CreateGalaryForm } from "./FormType/createGalaryPost";
 
-export const CreatePost = () => {
+const CreatePost = () => {
   const divisionObject = {
     cult: ["home", "feed", "gc", "galary"],
     tech: ["home", "feed", "gc", "galary"],
@@ -17,9 +17,9 @@ export const CreatePost = () => {
   const [division, setDivision] = useState("");
   const [postType, setPostType] = useState("");
 
-  useEffect(() => {
-    console.log(division, postType)
-  }, [division]);
+  // useEffect(() => {
+  //   console.log(division, postType)
+  // }, [division]);
 
   return (
     <div>
@@ -61,3 +61,5 @@ export const CreatePost = () => {
     </div>
   );
 };
+
+export default CreatePost;

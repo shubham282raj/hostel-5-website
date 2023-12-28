@@ -1,5 +1,6 @@
 import * as yup from "yup";
 import { useCreateForm } from "../component/useCreateForm";
+import { validateFile } from "../component/validateFileSize";
 
 export const CreateFeedForm = ({ division }) => {
 
@@ -31,8 +32,11 @@ export const CreateFeedForm = ({ division }) => {
             type="file"
             accept="image/*"
             onChange={(event) => {
-              setDocumentUpload((prev)=>[...prev,event.target.files[0]]);
+              if (validateFile(event, 500)) {
+                setDocumentUpload((prev) => [...prev, event.target.files[0]]);
+              }
             }}
+            required
           />
           <textarea placeholder="Description..." {...register("description")} />
           <p className="registerError">{errors.description?.message}</p>

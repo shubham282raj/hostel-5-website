@@ -50,44 +50,45 @@ export const useCreateForm = (schema, division, type) => {
   };
 
   const onCreatePost = async (data) => {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    let documentURL = {};
+      let documentURL = {};
 
-    await Promise.all(
-      documentUpload.map(async (doc, key) => {
-        const newURL = await uploaddocument(doc);
-        
-        if(key===0){
-          documentURL['imageURL'] = newURL;
-        }else{
-          documentURL[`imageURL${key}`] = newURL;
-        }
+      await Promise.all(
+        documentUpload.map(async (doc, key) => {
+          const newURL = await uploaddocument(doc);
 
-      })
-    );
+          if (key === 0) {
+            documentURL["imageURL"] = newURL;
+          } else {
+            documentURL[`imageURL${key}`] = newURL;
+          }
+        })
+      );
 
-    // console.log(documentURL)
-    // return
+      // if (Object.keys(documentURL).length === 0) {
+      //   setLoading(false);
+      //   return;
+      // }
 
-    if (Object.keys(documentURL).length === 0) {
+      await addDoc(collectionRef, {
+        //   title: data.title,
+        //   description: data.description,
+        ...data, //instead of the above two lines
+        ...documentURL,
+        username: user?.displayName,
+        userId: user?.uid,
+        timestamp: serverTimestamp(),
+      });
+    } catch {
+      window.alert(
+        "Error Occured! You must be a council member with permissions to write and delete post!"
+      );
+    } finally {
       setLoading(false);
-      return;
+      navigate("/council/login");
     }
-
-    await addDoc(collectionRef, {
-      //   title: data.title,
-      //   description: data.description,
-      ...data, //instead of the above two lines
-      ...documentURL,
-      username: user?.displayName,
-      userId: user?.uid,
-      timestamp: serverTimestamp(),
-    });
-
-    setLoading(false);
-
-    navigate("/council/login");
   };
 
   const onCreateMessMenu = async (data) => {

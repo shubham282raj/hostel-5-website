@@ -1,5 +1,6 @@
 import * as yup from "yup";
 import { useCreateForm } from "../component/useCreateForm";
+import { validateFile } from "../component/validateFileSize";
 
 export const CreateGCForm = ({ division }) => {
   const schema = {
@@ -17,7 +18,7 @@ export const CreateGCForm = ({ division }) => {
     handleSubmit,
     errors,
     loading,
-   } = useCreateForm(schema, division, "gc");
+  } = useCreateForm(schema, division, "gc");
 
   return (
     <>
@@ -38,8 +39,11 @@ export const CreateGCForm = ({ division }) => {
             type="file"
             accept="image/*"
             onChange={(event) => {
-              setDocumentUpload((prev)=>[...prev,event.target.files[0]]);
+              if (validateFile(event, 500)) {
+                setDocumentUpload((prev) => [...prev, event.target.files[0]]);
+              }
             }}
+            required
           />
           <textarea
             placeholder="Team Details..."

@@ -1,6 +1,7 @@
 import * as yup from "yup";
 import { useCreateForm } from "../component/useCreateForm";
 import { useState } from "react";
+import { validateFile } from "../component/validateFileSize";
 
 export const CreateGalaryForm = ({ division }) => {
   const schema = {
@@ -35,10 +36,14 @@ export const CreateGalaryForm = ({ division }) => {
               type="file"
               accept="image/*"
               onChange={(event) => {
-                setDocumentUpload((prev)=>[...prev,event.target.files[0]]);
+                if (validateFile(event, 500)) {
+                  setDocumentUpload((prev) => [...prev, event.target.files[0]]);
+                }
               }}
+              required
             />;
           })}
+          <br></br>
           {<div className="addMore" onClick={()=>setImageCount(prev=>[...prev,1])}>Add More</div>}
           <textarea placeholder="Description..." {...register("description")} />
           <p className="registerError">{errors.description?.message}</p>

@@ -5,7 +5,7 @@ export const useDeletePost = () => {
   const deleteThisPost = async (post, path) => {
     const confirmation = window.prompt("Type 'CONFIRM' to delete");
     if (confirmation !== "CONFIRM") {
-      window.alert("Failed to Delete");
+      window.alert("You must write 'CONFRIM' to continue");
       return;
     }
     
@@ -15,7 +15,7 @@ export const useDeletePost = () => {
         await deleteDoc(docRef)
         window.alert("Post Deleted Successfully!")
     } catch (error) {
-        window.alert("Some Error Occured. Try Again!")
+        window.alert("Error Occured! You must be a council member with permissions to write and delete post!")
     }
   };
 

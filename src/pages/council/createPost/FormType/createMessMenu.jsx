@@ -1,6 +1,7 @@
 import * as yup from "yup";
 import { useCreateForm } from "../component/useCreateForm";
 import { useSpreadSheet } from "../component/useSpreadSheet";
+import { validateFile } from "../component/validateFileSize";
 
 export const CreateMessMenu = ({ division }) => {
   const schema = {
@@ -32,8 +33,11 @@ export const CreateMessMenu = ({ division }) => {
             type="file"
             accept=".xls, .xlsx"
             onChange={(event) => {
-              handleExcelFile(event.target.files[0]);
+              if (validateFile(event, 500)) {
+                handleExcelFile(event.target.files[0]);
+              }
             }}
+            required
           />
           <input type="submit" value={loading ? "Uploading" : "Submit"} />
         </form>

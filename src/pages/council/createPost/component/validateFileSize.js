@@ -8,9 +8,9 @@ export const validateFile = (event, size) => {
         if (fileSizeInKB > size) {
             event.target.value = ''; // Clear the file input
             window.alert(`File size cannot be more than ${size}KBs`)
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
     }
 }

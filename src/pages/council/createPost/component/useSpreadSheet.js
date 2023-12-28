@@ -46,17 +46,16 @@ export const useSpreadSheet = (setDocumentUpload) => {
       div = ReactDOMServer.renderToString(div);
       obj[value] = div;
     });
-    setDocumentUpload(obj, console.log(obj));
+    setDocumentUpload(obj);
+    return obj;
   }
 
   const handleExcelFile = async (e) => {
     try {
-
       const result = await readExcelFile(e);
       await convertToHTMLString(result);
-
-    } catch (error) {
-      console.error(error);
+    } catch {
+      window.alert("Some Error occurred while reading Excel File")
     }
   };
 

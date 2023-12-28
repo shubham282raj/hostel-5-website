@@ -81,6 +81,8 @@ export const useCreateForm = (schema, division, type) => {
         userId: user?.uid,
         timestamp: serverTimestamp(),
       });
+      setLoading(false);
+      window.alert("Posted Successfully!");
     } catch {
       window.alert(
         "Error Occured! You must be a council member with permissions to write and delete post!"
@@ -92,23 +94,29 @@ export const useCreateForm = (schema, division, type) => {
   };
 
   const onCreateMessMenu = async (data) => {
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    console.log(documentUpload);
+      console.log(documentUpload);
 
-    await addDoc(collectionRef, {
-      //   title: data.title,
-      //   description: data.description,
-      ...data, //instead of the above two lines
-      ...documentUpload,
-      username: user?.displayName,
-      userId: user?.uid,
-      timestamp: serverTimestamp(),
-    });
+      await addDoc(collectionRef, {
+        //   title: data.title,
+        //   description: data.description,
+        ...data, //instead of the above two lines
+        ...documentUpload,
+        username: user?.displayName,
+        userId: user?.uid,
+        timestamp: serverTimestamp(),
+      });
+    } catch {
+      window.alert(
+        "Error Occured! You must be a council member with permissions to write and delete post!"
+      );
+    } finally {
+      setLoading(false);
 
-    setLoading(false);
-
-    navigate("/council/login");
+      navigate("/council/login");
+    }
   };
 
   return {

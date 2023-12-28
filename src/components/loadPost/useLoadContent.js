@@ -18,6 +18,11 @@ export const useLoadContent = (path, limitLoad = 3) => {
   const [loading, setLoading] = useState(false);
 
   const getPosts = async () => {
+
+    if(path.includes("null")){
+      return
+    }
+
     setLoading(true)
 
     const data = await getDocs(
@@ -81,7 +86,7 @@ export const useLoadContent = (path, limitLoad = 3) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return [{postsList, hasMore, loadMore, loading}];
+  return [{postsList, hasMore, loadMore, loading, getPosts}];
   // return (
   //   <div>
   //     {postsList?.map((post) => {

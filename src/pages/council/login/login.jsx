@@ -40,7 +40,8 @@ const LoginCouncil = () => {
             </button>
           </div>
           <div className="councilCRUD">
-            <Link to="/council/createPost">Create Post</Link>
+            <Link to="/council/createPost">Create Post</Link><br></br>
+            <Link to="/council/deletePost">Delete Post</Link>
           </div>
         </>
       )}

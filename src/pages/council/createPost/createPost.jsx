@@ -4,6 +4,7 @@ import "./createPost.css";
 import { CreateGCForm } from "./FormType/createGCForm";
 import { CreateMessMenu } from "./FormType/createMessMenu";
 import { CreateGalaryForm } from "./FormType/createGalaryPost";
+import { CreateCouncilMember } from "./FormType/createCouncilMember";
 
 const CreatePost = () => {
   const divisionObject = {
@@ -11,7 +12,7 @@ const CreatePost = () => {
     tech: ["home", "feed", "gc", "galary"],
     sports: ["home", "feed", "gc", "galary"],
     mess: ["home", "messMenu"],
-    council: ["home", "coordinators", "secretary"],
+    council: ["home", "addMember"],
   };
 
   const [division, setDivision] = useState("");
@@ -57,6 +58,7 @@ const CreatePost = () => {
         {postType === "gc" && <CreateGCForm division={division} />}
         {postType === "messMenu" && <CreateMessMenu division={division} />}
         {postType === "galary" && <CreateGalaryForm division={division} />}
+        {(postType === "addMember") && <CreateCouncilMember division={division} />}
       </>
     </div>
   );

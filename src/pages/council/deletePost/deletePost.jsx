@@ -10,7 +10,7 @@ const DeletePost = () => {
     tech: ["home", "feed", "gc", "galary"],
     sports: ["home", "feed", "gc", "galary"],
     mess: ["home", "menu"],
-    council: ["home", "coordinators", "secretary"],
+    council: ["home", "Secretary", "Coordinator", "StudentCouncil", "Office"],
   };
 
   const [division, setDivision] = useState("null");

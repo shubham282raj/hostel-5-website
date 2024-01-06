@@ -1,0 +1,25 @@
+.editPostContainer {
+    
+}
+.editPostContainer .subContainer{
+    border: 2px solid white;
+    width: 95%;
+    margin: auto;
+    margin-top: 15px;
+}
+.editPostContainer .subContainer img{
+    width: 100%;
+}
+.editPostContainer .subContainer p{
+    font-size: 20px;
+    color: white;
+}
+.editPostContainer .btn{
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 20px;
+}

@@ -28,9 +28,9 @@ const Council = () => {
         })}
         {coordies.postsList?.map((post, key) => {
           return (
-            <>
+            <div key={key}>
               <div className="divisionType">{post.divisionType}</div>
-              <CouncilMemPost post={post} key={key} />
+              <CouncilMemPost post={post}/>
               <div className="secies">
                 {secies.postsList?.map((secyPost, secyKey) => {
                   if (post.divisionType === secyPost.divisionType) {
@@ -39,7 +39,7 @@ const Council = () => {
                   return <></>;
                 })}
               </div>
-            </>
+            </div>
           );
         })}
       </div>

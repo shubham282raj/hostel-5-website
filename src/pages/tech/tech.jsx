@@ -7,22 +7,10 @@ import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
 const Tech = () => {
-  const [home] = useLoadContent("tech/home/home");
   const [feed] = useLoadContent("tech/feed/feed");
   const [gc] = useLoadContent("tech/gc/gc");
   const [galary] = useLoadContent("tech/galary/galary");
   //components
-  const HomeTab = () => {
-    return (
-      <div className="techHomeTab homeTabContainer">
-        {home.postsList?.map((post, key) => {
-          return <FeedPost post={post} key={key} />;
-        })}
-        {home.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
-        {home.hasMore && <button className="tabLoadMoreBtn" onClick={home.loadMore}>Load More</button>}
-      </div>
-    );
-  };
   const FeedTab = () => {
     return (
       <div className="techFeedTab feedTabContainer">
@@ -64,8 +52,8 @@ const Tech = () => {
     <div>
       {/* the class which containes the tabs has id "tabContainer" */}
       <FooterNav
-        tabComponents={[<HomeTab />, <FeedTab />, <GCTab />, <GalaryTab />]}
-        tabLabels={["Tech", "Feed", "GC", "Galary"]}
+        tabComponents={[<FeedTab />, <GCTab />, <GalaryTab />]}
+        tabLabels={["Feed", "GC", "Galary"]}
       />
     </div>
   );

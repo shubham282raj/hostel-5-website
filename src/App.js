@@ -10,6 +10,7 @@ import Council from "./pages/council/council";
 import LoginCouncil from "./pages/council/login/login";
 import CreatePost from "./pages/council/createPost/createPost";
 import DeletePost from "./pages/council/deletePost/deletePost";
+import EditPost from "./pages/council/editPost/editPost";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             <Route path="login" element={<LoginCouncil />} />
             <Route path="createPost" element={<CreatePost />} />
             <Route path="deletePost" element={<DeletePost />} />
+            <Route path="editPost" element={<EditPost/>} />
+            <Route path="editPost/:division/:postType/:id" Component={EditPost} />
           </Route>
         </Routes>
       </Router>

@@ -3,6 +3,7 @@ import "./deletePost.css";
 import { useLoadContent } from "../../../components/loadPost/useLoadContent";
 import { LoadingAnimation } from "../../../components/loadingAnimation/loadingAnimation";
 import { useDeletePost } from "./components/useDeletePost";
+import { Link, useNavigate } from "react-router-dom";
 
 const DeletePost = () => {
   const divisionObject = {
@@ -18,16 +19,14 @@ const DeletePost = () => {
 
   const [content] = useLoadContent(`${division}/${postType}/${postType}`);
 
-  // useEffect(() => {
-  //   console.log(division, postType)
-  // }, [division]);
+  const navigate = useNavigate();
 
-  const {deleteThisPost} = useDeletePost();
+  const { deleteThisPost } = useDeletePost();
 
   return (
     <div>
       {/* {divisionSubmit && <span>&#60;-</span>} */}
-      <h2 id="createPostHeader">Delete Post</h2>
+      <h2 id="createPostHeader">Edit / Delete Post</h2>
       <>
         <div className="createPostSelectMenu">
           <span>Division:</span>
@@ -56,28 +55,52 @@ const DeletePost = () => {
             ))}
           </select>
         </div>
-        {division!=="null" && postType!=="null" && <button className="GetPostBtn" onClick={content.getPosts}>Get Posts</button>}
+        {division !== "null" && postType !== "null" && (
+          <button className="GetPostBtn" onClick={content.getPosts}>
+            Get Posts
+          </button>
+        )}
       </>
       <>
-        {content.postsList?.map((post,key)=>{
-            return(
-                <div className="deletePostChild" key={key}>
-                    <div className="content">
-                        <div className="title">{post?.title}</div>
-                        <div className="description">{post?.description}</div>
-                        <div className="date">{new Date(post?.timestamp.seconds * 1000).toLocaleString()}</div>
-                        <div>{post?.username}</div>
-                    </div>
-                    <div>
-                        <div className="deleteBtn" onClick={()=>deleteThisPost(post, `${division}/${postType}/${postType}/${post.id}`)}>
-                            X
-                        </div>
-                    </div>
+        {content.postsList?.map((post, key) => {
+          return (
+            <div className="deletePostChild" key={key}>
+              <div className="content">
+                <div className="title">{post?.title}</div>
+                <div className="description">{post?.description}</div>
+                <div className="date">
+                  {new Date(post?.timestamp.seconds * 1000).toLocaleString()}
                 </div>
-            )
+                <div>{post?.username}</div>
+              </div>
+              <div>
+                <div
+                  className="deleteBtn"
+                  onClick={() =>
+                    deleteThisPost(
+                      post,
+                      `${division}/${postType}/${postType}/${post.id}`
+                    )
+                  }
+                >
+                  X
+                </div>
+                {/* <div onClick={()=>{
+                  navigate(`/council/editPost/${post?.id}`)
+                }}>Edit</div> */}
+                <Link to={`/council/editPost/${division}/${postType}/${post.id}`}>Edit</Link>
+              </div>
+            </div>
+          );
         })}
-        {content.loading && <LoadingAnimation loadingText={true} marginTop="40px" />}
-        {content.hasMore && <button className="tabLoadMoreBtn" onClick={content.loadMore}>Load More</button>}
+        {content.loading && (
+          <LoadingAnimation loadingText={true} marginTop="40px" />
+        )}
+        {content.hasMore && (
+          <button className="tabLoadMoreBtn" onClick={content.loadMore}>
+            Load More
+          </button>
+        )}
       </>
     </div>
   );

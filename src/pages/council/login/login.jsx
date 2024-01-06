@@ -41,7 +41,7 @@ const LoginCouncil = () => {
           </div>
           <div className="councilCRUD">
             <Link to="/council/createPost">Create Post</Link><br></br>
-            <Link to="/council/deletePost">Delete Post</Link>
+            <Link to="/council/deletePost">Edit/Delete Post</Link><br></br>
           </div>
         </>
       )}

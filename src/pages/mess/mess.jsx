@@ -37,8 +37,8 @@ const Mess = () => {
     <div>
       {/* the class which containes the tabs has id "tabContainer" */}
       <FooterNav
-        tabComponents={[<HomeTab />, <MessMenuTab />]}
-        tabLabels={["Mess", "Menu"]}
+        tabComponents={[<MessMenuTab />, <HomeTab />]}
+        tabLabels={["Menu", "Mess"]}
       />
     </div>
   );

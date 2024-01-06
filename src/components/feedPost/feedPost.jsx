@@ -6,24 +6,28 @@ export const FeedPost = (props) => {
 
   return (
     <div className="feedPostContainer postContainer">
-      <div className="feedPostTitle postTitle">{props.post.title}</div>
-      <img
-        loading="lazy"
-        className="feedPostImage postImage"
-        src={props.post.imageURL}
-        alt="postImage"
-      />
-      <div
-        className="contentToHide"
-        style={{ maxHeight: openPost ? "fit-content" : "105px" }}
-      >
-        <div
-          className="feedPostDescription postDescription"
-          dangerouslySetInnerHTML={{ __html: props.post.description }}
+      <div className="imageContainer">
+        <img
+          loading="lazy"
+          className="feedPostImage postImage"
+          src={props.post.imageURL}
+          alt="postImage"
         />
       </div>
-      <div onClick={() => setOpenPost(!openPost)} className="toggleRead">
-        {openPost ? "Read Less" : "Read More"}
+      <div className="text">
+        <div className="feedPostTitle postTitle">{props.post.title}</div>
+        <div
+          className="contentToHide"
+          style={{ maxHeight: openPost ? "fit-content" : "105px" }}
+        >
+          <div
+            className="feedPostDescription postDescription"
+            dangerouslySetInnerHTML={{ __html: props.post.description }}
+          />
+        </div>
+        <div onClick={() => setOpenPost(!openPost)} className="toggleRead">
+          {openPost ? "Read Less" : "Read More"}
+        </div>
       </div>
       {/* <div className="footer">@{props.post.username}</div> */}
     </div>

@@ -20,7 +20,7 @@ export const GalaryPost = (props) => {
             className="galaryPostImage postImage"
             key={index}
             src={filteredImageURLs[key]}
-            alt={`Image ${index + 1}`}
+            alt={`ImageFile ${index + 1}`}
           />
         ))}
       </>

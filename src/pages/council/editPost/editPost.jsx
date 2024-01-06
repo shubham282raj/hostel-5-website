@@ -26,20 +26,21 @@ const EditPost = () => {
 
   useEffect(() => {
     getPost();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="editPostContainer">
       {Object.keys(data).map((key, value) => {
         if (key === "timestamp" || key === "username" || key === "userId" || key === "updatedTimestamp") {
-          return;
+          return <></>;
         }
 
         if (key.startsWith("imageURL")) {
           return (
             <div className="imageType subContainer">
               <p>{key}</p>
-              <img id={`image${value}`} src={data[key]} alt={`image${value}`} />
+              <img id={`image${value}`} src={data[key]} alt={`imageFile${value}`} />
               <input
                 type="file"
                 accept="image/*"

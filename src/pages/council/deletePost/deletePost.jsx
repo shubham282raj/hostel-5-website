@@ -3,7 +3,7 @@ import "./deletePost.css";
 import { useLoadContent } from "../../../components/loadPost/useLoadContent";
 import { LoadingAnimation } from "../../../components/loadingAnimation/loadingAnimation";
 import { useDeletePost } from "./components/useDeletePost";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DeletePost = () => {
   const divisionObject = {
@@ -18,8 +18,6 @@ const DeletePost = () => {
   const [postType, setPostType] = useState("null");
 
   const [content] = useLoadContent(`${division}/${postType}/${postType}`);
-
-  const navigate = useNavigate();
 
   const { deleteThisPost } = useDeletePost();
 

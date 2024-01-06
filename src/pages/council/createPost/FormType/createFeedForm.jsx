@@ -32,7 +32,7 @@ export const CreateFeedForm = ({ division }) => {
             type="file"
             accept="image/*"
             onChange={(event) => {
-              if (validateFile(event, 500)) {
+              if (validateFile(event, 250)) {
                 setDocumentUpload((prev) => [...prev, event.target.files[0]]);
               }
             }}

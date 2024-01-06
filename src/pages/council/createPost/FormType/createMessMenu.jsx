@@ -33,7 +33,7 @@ export const CreateMessMenu = ({ division }) => {
             type="file"
             accept=".xls, .xlsx"
             onChange={(event) => {
-              if (validateFile(event, 500)) {
+              if (validateFile(event, 100)) {
                 handleExcelFile(event.target.files[0]);
               }
             }}

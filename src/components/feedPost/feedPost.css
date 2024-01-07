@@ -38,7 +38,7 @@
   font-size: 17px;
   overflow: hidden;
   margin-bottom: 10px;
-  transition: all 1s;
+  transition: all .7s;
 }
 .feedPostContainer a {
   color: orange;

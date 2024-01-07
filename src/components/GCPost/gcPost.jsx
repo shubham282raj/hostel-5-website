@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./gcPost.css";
 
 export const GCPost = (props) => {
   const [openPost, setOpenPost] = useState(false);
-
+  const contentToHideRef = useRef(null);
   return (
     <div className="gcPostContainer postContainer">
       <div className="header">
@@ -20,7 +20,12 @@ export const GCPost = (props) => {
       />
       <div
         className="contentToHide"
-        style={{ maxHeight: openPost ? "fit-content" : "105px" }}
+        ref={contentToHideRef}
+        style={{
+          maxHeight: openPost
+            ? contentToHideRef.current.scrollHeight + "px"
+            : "105px",
+        }}
       >
         <div
           className="gcTeamDetails"

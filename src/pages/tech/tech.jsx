@@ -48,6 +48,10 @@ const Tech = () => {
     );
   };
   //the main return
+  const hostelHeading = document.getElementById("navbarHostelName");
+  if (hostelHeading) {
+    hostelHeading.textContent = "Hostel 5 | Tech";
+  }
   return (
     <div>
       {/* the class which containes the tabs has id "tabContainer" */}

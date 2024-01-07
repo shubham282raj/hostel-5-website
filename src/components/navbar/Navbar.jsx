@@ -43,7 +43,7 @@ export const Navbar = () => {
     <>
       <div id="navbar">
         <span className="logo">
-          <span className="hostelName">Hostel 5</span>
+          <span className="hostelName" id="navbarHostelName">Hostel 5</span>
         </span>
         <span>
           <LinkComponent />

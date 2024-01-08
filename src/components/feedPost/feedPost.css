@@ -1,31 +1,35 @@
-.feedPostContainer {
+.tabPosts{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 10px;
+  max-width: 90%;
   margin: auto;
-  margin-bottom: 15px;
-  max-width: 95%;
-  /* overflow: hidden; */
-  /* border: 2px solid var(--white); */
-  /* background-color: white; */
-  background-color: rgba(0, 0, 0, 0.218);
-  /* border-radius: 12px; */
 }
-.feedPostContainer .text {
-  padding: 10px 12px;
+.postContainer {
+  margin: auto;
+  margin-top: 0;
+  width: 27vw;
+  background-color: rgba(0, 0, 0, 0.218);
+}
+.postContainer .text {
+  padding: 10px 12px 12px 12px;
 }
 
-.feedPostContainer .postTitle {
+.postContainer .postTitle {
   font-size: 24px;
   font-size: 21px;
   font-weight: bold;
   text-align: left;
 }
-.feedPostContainer .imageContainer {
+.postContainer .imageContainer {
+  flex-shrink: 0;
   position: relative;
   z-index: 1;
   width: 100%;
   padding-top: 75%; /* 4:3 aspect ratio (height/width * 100) */
   overflow: hidden;
 }
-.feedPostContainer .postImage {
+.postContainer .postImage {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,17 +37,17 @@
   height: 100%;
   object-fit: cover;
 }
-.feedPostContainer .contentToHide {
+.postContainer .contentToHide {
   text-align: justify;
   font-size: 17px;
   overflow: hidden;
   margin-bottom: 10px;
   transition: all .7s;
 }
-.feedPostContainer a {
+.postContainer a {
   color: orange;
 }
-.feedPostContainer .toggleRead {
+.postContainer .toggleRead {
   display: inline-block;
   padding: 0px 5px;
   border-radius: 10px;
@@ -51,11 +55,29 @@
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   border-bottom: none;
+  user-select: none;
+  cursor: pointer;
 }
 .tabLoadMoreBtn {
   padding: 5px 10px;
+  margin: 10px;
   border-radius: 20px;
   border: none;
-  background-color: var(--white);
+  background-color: rgba(0, 0, 0, 0.218);
+  border: 1px solid white;
+  color: white;
   font-size: 16px;
+  user-select: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {
+  .tabPosts{
+    display: flex;
+    flex-direction: column;
+    max-width: 96%;
+  }
+  .postContainer{
+    width: 100%;
+  }
 }

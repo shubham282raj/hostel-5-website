@@ -15,12 +15,17 @@ export const FeedPost = (props) => {
         />
       </div>
       <div className="text">
-        <div className="feedPostTitle postTitle">{props.post.title}</div>
         <div
           className="contentToHide"
           ref={contentToHideRef}
-          style={{ maxHeight: openPost ? (contentToHideRef.current.scrollHeight + "px") : "105px" }}
+          style={{
+            maxHeight: openPost
+              ? contentToHideRef.current.scrollHeight + "px"
+              : "165px",
+            minHeight: "165px"
+          }}
         >
+          <div className="feedPostTitle postTitle">{props.post.title}</div>
           <div
             className="feedPostDescription postDescription"
             dangerouslySetInnerHTML={{ __html: props.post.description }}

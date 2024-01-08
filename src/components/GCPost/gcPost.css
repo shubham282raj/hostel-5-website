@@ -1,64 +1,13 @@
-.gcPostContainer .header{
-    /* display: flex; */
-}
-@media screen and (max-width: 550px) {
-    .gcPostContainer .gcPostScore{
-        font-size: 18px;
-    }
-    .gcPostContainer .gcTeamDetails{
-        text-align: center;
-    }
+.GCTabPosts {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  margin: 10px 100px;
 }
 
-/* same as feed post */
-
-.gcPostContainer {
-    margin: auto;
-    margin-bottom: 15px;
-    max-width: 95%;
-    overflow: hidden;
-    /* border: 2px solid var(--white); */
-    /* background-color: white; */
-    background-color: rgba(0, 0, 0, 0.218);
-    /* border-radius: 12px; */
-  }
-  .gcPostContainer .text{
-    padding: 10px 12px;
-  }
-  .gcPostContainer .postTitle {
-    font-size: 24px;
-    font-size: 21px;
-    font-weight: bold;
-    text-align: left;
-  }
-  .gcPostContainer .postImage {
-    width: 100%;
-    aspect-ratio: 4/3;
-  }
-  .gcPostContainer .contentToHide {
-    text-align: justify;
-    font-size: 17px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    transition: all .7s;
-  }
-  .gcPostContainer a {
-    color: orange;
-  }
-  .gcPostContainer .toggleRead {
-    display: inline-block;
-    padding: 0px 5px;
-    border-radius: 10px;
-    border: 2px solid var(--white);
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-bottom: none;
-  }
-  .tabLoadMoreBtn {
-    padding: 5px 10px;
-    border-radius: 20px;
-    border: none;
-    background-color: var(--white);
-    font-size: 16px;
-  }
-  
+.gcPostContainer .gcPostScore {
+  font-size: 18px;
+}
+.gcPostContainer .gcTeamDetails {
+  text-align: center;
+}

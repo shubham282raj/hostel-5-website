@@ -13,11 +13,13 @@ const Sports = () => {
   //components
   const FeedTab = () => {
     return (
-      <div className="sportsFeedTab feedTabContainer">
+      <div className="sportsFeedTab feedTab">
         <div className="tabName">Feed</div>
+        <div className="feedTabPosts tabPosts">
         {feed.postsList?.map((post, key) => {
           return <FeedPost post={post} key={key} />;
         })}
+        </div>
         {feed.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
         {feed.hasMore && <button className="tabLoadMoreBtn" onClick={feed.loadMore}>Load More</button>}
       </div>
@@ -25,11 +27,13 @@ const Sports = () => {
   };
   const GCTab = () => {
     return (
-      <div className="sportsGCTab GCTabContainer">
+      <div className="sportsGCTab GCTab">
         <div className="tabName">GC</div>
+        <div className="GCTabPosts tabPosts">
         {gc.postsList?.map((post, key) => {
           return <GCPost post={post} key={key} />;
         })}
+        </div>
         {gc.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
         {gc.hasMore && <button className="tabLoadMoreBtn" onClick={gc.loadMore}>Load More</button>}
       </div>
@@ -37,11 +41,13 @@ const Sports = () => {
   };
   const GalaryTab = () => {
     return (
-      <div className="sportsGalaryTab GalaryTabContainer">
+      <div className="sportsGalaryTab galaryTab">
         <div className="tabName">Galary</div>
+        <div className="galaryTabPosts tabPosts">
         {galary.postsList?.map((post, key) => {
           return <GalaryPost post={post} key={key} />;
         })}
+        </div>
         {galary.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
         {galary.hasMore && <button className="tabLoadMoreBtn" onClick={galary.loadMore}>Load More</button>}
       </div>

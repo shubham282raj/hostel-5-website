@@ -2,6 +2,26 @@
   display: none;
 }
 
+#tabContainer {
+ 
+}
+#tabContainer .tabName {
+  display: inline-block;
+  padding: 0px 20px;
+  margin: 10px;
+  font-size: 25px;
+  background-color: white;
+  color: var(--background-color);
+  font-weight: bold;
+  border-radius: 20px;
+}
+.tab {
+  /* border: 2px solid white; */
+  width: 100%;
+  color: var(--white);
+  /* padding: 10px; */
+}
+
 @media screen and (max-width: 550px) {
   #tabContainer {
     display: flex;
@@ -9,8 +29,6 @@
     scroll-snap-stop: always;
     overflow: hidden;
     flex-wrap: nowrap;
-    overflow: hidden;
-    /* overflow-x: scroll; */
   }
   #tabContainer .tabName {
     margin: 8px;
@@ -27,7 +45,6 @@
   .tab {
     flex-shrink: 0;
     scroll-snap-align: center;
-    color: var(--white);
     width: 100vw;
     min-height: 100vh;
     /* min-height: 100px; */

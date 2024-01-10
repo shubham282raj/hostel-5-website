@@ -12,18 +12,23 @@
     --color-text: #81AFDD;
     --color-subtext: #FF8A71;
 
-    --navbar-bg: white;
+    /* navbar */
+    --navbar-bg: transparent;
+    --navbar-hostelname-color: white;
+    --navbar-links-color: white;
+    --navbarPadding: 50px;
+    --footerPadding: 50px;
 
     --text-color-1: black;
 
     --menu-icon-width: 80%;
     --menu-icon-height: 7%;
     --menu-icon-border-radius: 10px;
-    --menu-icon-center-color: var(--text-color-1);
-    --menu-icon-exteme-color: var(--text-color-1);
+    --menu-icon-center-color: white;
+    --menu-icon-exteme-color: white;
     --menu-transition-time: 0.5s;
 
     --white: white;
     --black: black;
-    --background-color: darkslategray;
+    --background-color: darkslategrey;
   }

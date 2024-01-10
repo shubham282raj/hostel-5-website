@@ -11,3 +11,10 @@
 body{
   background-color: var(--background-color);
 }
+
+#universalNavbarPadding{
+  height: var(--navbarPadding);
+}
+#universalFooterPadding{
+  height: var(--footerPadding);
+}

@@ -1,7 +1,3 @@
-#navbarPadding {
-  height: 80px;
-}
-
 #navbar {
   z-index: 100;
   background-color: var(--navbar-bg);
@@ -16,7 +12,7 @@
 
 #navbar .logo .hostelName {
   text-wrap: nowrap;
-  color: var(--text-color-1);
+  color: var(--navbar-hostelname-color);
   font-size: 27px;
 }
 
@@ -27,7 +23,7 @@
 
 .links a {
   text-decoration: none;
-  color: var(--text-color-1);
+  color: var(--navbar-links-color);
   font-size: 24px;
 }
 
@@ -116,7 +112,8 @@
   #navbar .links {
     display: none;
   }
-  .linkMenu {
+  .linkMenu {    box-sizing: content-box;
+
     background-color: var(--navbar-bg);
     display: block;
     overflow: hidden;
@@ -127,6 +124,8 @@
     width: 100vw;
     /* border-radius: 10px; */
     z-index: 99;
+    background-color: rgba(72, 72, 72, 0.492);
+    backdrop-filter: blur(8px);
   }
   .linkMenu .links {
     display: flex;

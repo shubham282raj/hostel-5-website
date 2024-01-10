@@ -1,9 +1,47 @@
+import { Slides } from "./components/slides";
+import "./home.css";
+import { useEffect, useRef } from "react";
+
 const Home = () => {
   const hostelHeading = document.getElementById("navbarHostelName");
   if (hostelHeading) {
     hostelHeading.textContent = "Hostel 5";
   }
-  return <div>This is the home page</div>;
+  const homePage = useRef(null);
+  useEffect(() => {
+    const navbarPadding = document.getElementById("universalNavbarPadding");
+    if (navbarPadding) navbarPadding.style.height = 0;
+    const footerPadding = document.getElementById("universalFooterPadding");
+    if (navbarPadding) footerPadding.style.height = 0;
+
+    return () => {
+      // Reset the values when component is unmounted or navigated away from the homepage
+      if (navbarPadding) navbarPadding.style.height = ""; // Reset to default value
+      if (footerPadding) footerPadding.style.height = ""; // Reset to default value
+    };
+  }, []);
+  
+  return (
+    <div
+      className="hostelHomePage"
+      ref={homePage}
+      onWheel={(event)=>{
+        event.preventDefault();
+        if(event.deltaY > 0){
+          homePage.current.scroll({
+            top: homePage.current.scrollTop + homePage.current.clientHeight,
+          })
+        }else{
+          homePage.current.scroll({
+            top: homePage.current.scrollTop - homePage.current.clientHeight,
+          })
+        }
+      }}
+    >
+      <Slides />
+      <Slides />
+    </div>
+  );
 };
 
 export default Home;

@@ -76,12 +76,12 @@ export const Navbar = () => {
         className="linkMenu"
         style={{
           maxHeight: toggleMenu ? "280px" : "0px",
+          paddingTop: toggleMenu ? "50px" : "0px"
           // border: "2px solid red"
         }}
       >
         <LinkComponent />
       </div>
-      <div id="navbarPadding"></div>
     </>
   );
 };

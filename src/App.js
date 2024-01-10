@@ -17,6 +17,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
+        <div id="universalNavbarPadding"></div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tech" element={<Tech />} />
@@ -28,12 +29,15 @@ function App() {
             <Route path="login" element={<LoginCouncil />} />
             <Route path="createPost" element={<CreatePost />} />
             <Route path="deletePost" element={<DeletePost />} />
-            <Route path="editPost" element={<EditPost/>} />
-            <Route path="editPost/:division/:postType/:id" Component={EditPost} />
+            <Route path="editPost" element={<EditPost />} />
+            <Route
+              path="editPost/:division/:postType/:id"
+              Component={EditPost}
+            />
           </Route>
         </Routes>
       </Router>
-      <div className="footerNavMargin"></div>
+      <div id="universalFooterPadding"></div>
     </div>
   );
 }

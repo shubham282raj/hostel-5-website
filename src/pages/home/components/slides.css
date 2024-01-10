@@ -1,0 +1,34 @@
+.homepageSlides{
+    position: relative;
+    scroll-snap-align: start;
+}
+.homepageSlides .homepageImgContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.homepageSlides .homepageImgContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.homepageSlides .slideText{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 45%;
+    z-index: 2;
+    max-width: 540px;
+}
+.homepageSlides .heading{
+    color: white;
+    font-size: 100px;
+}
+.homepageSlides .description{
+    color: white;
+    font-size: 20px;
+}

@@ -1,6 +1,7 @@
 .hostelHomePage{
     height: 100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
     -ms-overflow-style: none;

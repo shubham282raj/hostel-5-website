@@ -13,11 +13,11 @@
     --color-subtext: #FF8A71;
 
     /* navbar */
-    --navbar-bg: transparent;
+    --navbar-bg: rgba(0, 0, 0, 0.408);
+    --navbar-phone-bg: rgba(0, 0, 0, 0.408);
     --navbar-hostelname-color: white;
     --navbar-links-color: white;
-    --navbarPadding: 50px;
-    --footerPadding: 50px;
+
 
     --text-color-1: black;
 
@@ -30,5 +30,5 @@
 
     --white: white;
     --black: black;
-    --background-color: darkslategrey;
+    --background-color: rgb(50, 50, 50);
   }

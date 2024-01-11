@@ -4,49 +4,42 @@ import { useState } from "react";
 
 export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-
-  const LinkComponent = () => {
-    return (
-      <>
-        <span
-          className="links"
-          onClick={() => {
-            toggleMenu && setToggleMenu(!toggleMenu);
-          }}
-        >
-          <Link to={"/"} className="navLinksLink">
-            Home
-          </Link>
-          <Link to={"/tech"} className="navLinksLink">
-            Tech
-          </Link>
-          {/* <Link to={"/web"} className="navLinksLink">Web</Link> */}
-          <Link to={"/cult"} className="navLinksLink">
-            Cult
-          </Link>
-          <Link to={"/sports"} className="navLinksLink">
-            Sports
-          </Link>
-          <Link to={"/mess"} className="navLinksLink">
-            Mess
-          </Link>
-          <Link to={"/council"} className="navLinksLink">
-            Council
-          </Link>
-        </span>
-        
-      </>
-    );
-  };
+  const navigationLinks = [
+    ["/", "Home"],
+    ["/tech", "Tech"],
+    ["/cult", "Cult"],
+    ["/sports", "Sports"],
+    ["/mess", "Mess"],
+    ["/council", "Council"],
+  ];
 
   return (
     <>
       <div id="navbar">
         <span className="logo">
-          <span className="hostelName" id="navbarHostelName">Hostel 5</span>
+          <span className="hostelName" id="navbarHostelName">
+            Hostel 5
+          </span>
         </span>
         <span>
-          <LinkComponent />
+          <span
+            className="links"
+            onClick={() => {
+              toggleMenu && setToggleMenu(!toggleMenu);
+            }}
+          >
+            {navigationLinks.map((link, key) => {
+              return (
+                <Link
+                  to={link[0]}
+                  className="navLinksLink"
+                  key={key}
+                >
+                  {link[1]}
+                </Link>
+              );
+            })}
+          </span>
           <span className="menuIcon" onClick={() => setToggleMenu(!toggleMenu)}>
             <div
               className="line1"
@@ -76,11 +69,33 @@ export const Navbar = () => {
         className="linkMenu"
         style={{
           maxHeight: toggleMenu ? "280px" : "0px",
-          paddingTop: toggleMenu ? "50px" : "0px"
+          // paddingTop: toggleMenu ? "50px" : "0px"
           // border: "2px solid red"
         }}
       >
-        <LinkComponent />
+        <span
+          className="links"
+          onClick={() => {
+            toggleMenu && setToggleMenu(!toggleMenu);
+          }}
+        >
+          {navigationLinks.map((link, key) => {
+            return (
+              <Link
+                to={link[0]}
+                className="navLinksLink"
+                style={{
+                  transform: toggleMenu ? "translate(0,0)" : "translate(0,50px)",
+                  transitionDelay: !toggleMenu ? "0.5s" :`${0.05*key}s`,
+                  transitionDuration: toggleMenu ? "var(--menu-transition-time)" : "0s"
+                }}
+                key={key}
+              >
+                {link[1]}
+              </Link>
+            );
+          })}
+        </span>
       </div>
     </>
   );

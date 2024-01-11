@@ -1,4 +1,4 @@
-import { Slides } from "./slides/slides";
+import { Slide1, Slide2 } from "./slides/slides";
 import "./home.css";
 import { useEffect, useRef } from "react";
 import { useHomeCSS } from "./components/useHomeCSS";
@@ -11,9 +11,14 @@ const Home = () => {
   const homePage = useRef(null);
   useHomeCSS();
 
+  let lastWheelEvent = Date.now();
   useEffect(()=>{
     const handleWheel = (event) => {
       event.preventDefault();
+      if(Date.now() - lastWheelEvent < 300){
+        return;
+      }
+      lastWheelEvent = Date.now();
       if (event.deltaY > 0) {
         homePage.current.scroll({
           top: homePage.current.scrollTop + homePage.current.clientHeight,
@@ -32,8 +37,8 @@ const Home = () => {
       className="hostelHomePage"
       ref={homePage}
     >
-      <Slides />
-      <Slides />
+      <Slide1 />
+      <Slide2 />
     </div>
   );
 };

@@ -1,0 +1,29 @@
+.homepageSlide1 .slideText{
+    transform: translateX(0) translateY(-50%);
+}
+.homepageSlide2 .slideText{
+    transform: translate(0,-50%);
+    right: 50px;
+    left: auto;
+
+}
+.homepageSlide2 .homepageImgContainer{
+    filter: blur(10px);
+}
+@media screen and (max-width: 550px){
+    /* slide 1 */
+    .homepageSlide1 .homepageImgContainer img{
+      object-position: 27%;
+    }
+    .homepageSlide1 .slideText{
+        transform: none;
+    }
+    /* slide 2 */
+    .homepageSlide2 .slideText{
+        transform: none;
+        right: 0;
+    }
+    .homepageSlide2 .homepageImgContainer{
+        filter: none;
+    }
+  }

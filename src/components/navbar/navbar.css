@@ -64,6 +64,8 @@
   #navbar {
     padding: 7px 20px;
     flex-direction: row;
+    background-color: transparent;
+    backdrop-filter: none;
   }
   #navbar .logo .hostelName {
     font-size: 27px;
@@ -113,19 +115,18 @@
   #navbar .links {
     display: none;
   }
-  .linkMenu {    box-sizing: content-box;
-
+  .linkMenu {
+    box-sizing: content-box;
     background-color: var(--navbar-bg);
     display: block;
     overflow: hidden;
     transition: all var(--menu-transition-time);
     position: fixed;
     /* top: 10px; */
-    padding-top: 50px;
+    padding-top: 51px;
     width: 100vw;
     /* border-radius: 10px; */
     z-index: 99;
-    background-color: rgba(72, 72, 72, 0.492);
     backdrop-filter: blur(8px);
   }
   .linkMenu .links {
@@ -137,5 +138,7 @@
     /* background-color: var(--navbar-bg); */
     padding-bottom: 7px;
     font-size: 23px;
+    position: relative;
+    transition: all var(--menu-transition-time);
   }
 }

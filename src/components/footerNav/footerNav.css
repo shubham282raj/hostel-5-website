@@ -67,7 +67,7 @@
     font-size: 21px;
     width: 100%;
     /* border-radius: 20px; */
-    background-color: var(--navbar-phone-bg);
+    background-color: var(--navbar-bg);
     backdrop-filter: blur(10px);
   }
   .footerNav input {

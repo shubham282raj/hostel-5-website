@@ -10,8 +10,8 @@
   padding: 0px 20px;
   margin: 10px;
   font-size: 25px;
-  background-color: white;
-  color: var(--background-color);
+  background-color: var(--tabname-bg);
+  color: var(--tabname-color);
   font-weight: bold;
   border-radius: 20px;
 }
@@ -21,8 +21,9 @@
   /* margin: auto; */
   /* border: 2px solid white; */
   width: 90%;
-  color: var(--white);
-  border-bottom: 2px solid white;
+  color: var(--tab-text-color);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--tab-divider-color);
   /* padding: 10px; */
 }
 
@@ -42,8 +43,6 @@
     font-size: 22px;
     padding: 3px 18px;
     border-radius: 15px;
-    background-color: var(--white);
-    color: var(--black);
     display: inline-block;
   }
   .tab {
@@ -79,11 +78,11 @@
     border-radius: 20px;
     user-select: none;
     min-width: 70px;
-    color: white;
+    color: var(--footer-text-color);
   }
   .footerNav input:checked + label {
-    background-color: white;
-    color: black;
+    background-color: var(--footer-selected-bg);
+    color: var(--footer-selected-color);
     transition: all .3s ;
   }
   .footerNavMargin{

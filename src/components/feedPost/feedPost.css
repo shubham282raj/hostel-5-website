@@ -9,7 +9,7 @@
   margin: auto;
   margin-top: 0;
   width: 27vw;
-  background-color: rgba(0, 0, 0, 0.218);
+  background-color: var(--tab-card-bg);
 }
 .postContainer .text {
   padding: 10px 12px 12px 12px;
@@ -45,7 +45,7 @@
   transition: all .7s;
 }
 .postContainer a {
-  color: orange;
+  color: var(--tab-link-color);
 }
 .postContainer .toggleRead {
   display: inline-block;
@@ -63,9 +63,9 @@
   margin: 10px;
   border-radius: 20px;
   border: none;
-  background-color: rgba(0, 0, 0, 0.218);
-  border: 1px solid white;
-  color: white;
+  background-color: var(--load-more-bg);
+  border: 1px solid var(--load-more-border-color);
+  color: var(--load-more-color);
   font-size: 16px;
   user-select: none;
   cursor: pointer;

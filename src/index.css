@@ -13,21 +13,42 @@
     --color-subtext: #FF8A71;
 
     /* navbar */
-    --navbar-bg: rgba(0, 0, 0, 0.408);
-    --navbar-hostelname-color: white;
-    --navbar-links-color: white;
-
+    --navbar-bg: white;
+    --navbar-hostelname-color: black;
+    --navbar-links-color: black;
 
     --text-color-1: black;
 
     --menu-icon-width: 80%;
     --menu-icon-height: 7%;
     --menu-icon-border-radius: 10px;
-    --menu-icon-center-color: white;
-    --menu-icon-exteme-color: white;
+    --menu-icon-center-color: black;
+    --menu-icon-exteme-color: var(--menu-icon-center-color);
     --menu-transition-time: 0.5s;
 
     --white: white;
     --black: black;
-    --background-color: rgb(50, 50, 50);
+    --background-color: rgb(186, 186, 186);
+
+    /* tabs */
+    --tabname-bg: white;
+    --tabname-color: black;
+    --tab-text-color: black;
+    --tab-link-color: blue;
+    --tab-card-bg: white;
+    --tab-divider-color: black;
+
+    /* galaryPost */
+    --galary-scroller-btn-bg: rgba(0, 0, 0, 0.593);
+    --galary-scroller-btn-color: white;
+
+    /* load more and read more buttons */
+    --load-more-bg: rgb(70,70,70);
+    --load-more-border-color: none;
+    --load-more-color: white;
+
+    /* footer navigation */
+    --footer-text-color: black;
+    --footer-selected-color: white;
+    --footer-selected-bg: rgb(70,70,70);
   }

@@ -16,7 +16,7 @@
 .postContainer .galaryScrollerContainer .scrollBtn{
   position: absolute;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.593);
+  background-color: var(--galary-scroller-btn-bg);
   width: 40px;
   aspect-ratio: 1;
   font-size: 25px;
@@ -26,10 +26,14 @@
 .postContainer .galaryScrollerContainer .rightBtn{
   bottom: 40%;
   right: 0;
+  font-weight: bold;
+  color: var(--galary-scroller-btn-color);
 }
 .postContainer .galaryScrollerContainer .leftBtn{
   bottom: 40%;
   left: 0;
+  font-weight: bold;
+  color: var(--galary-scroller-btn-color);
 }
 
 .postContainer .galaryScroller::-webkit-scrollbar{

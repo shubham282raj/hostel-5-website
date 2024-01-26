@@ -28,7 +28,8 @@
 
     --white: white;
     --black: black;
-    --background-color: rgb(186, 186, 186);
+    --background-color: black;
+    /* rgb(186, 186, 186); */
 
     /* tabs */
     --tabname-bg: white;
@@ -39,7 +40,7 @@
     --tab-divider-color: black;
 
     /* galaryPost */
-    --galary-scroller-btn-bg: rgba(0, 0, 0, 0.593);
+    --galary-scroller-btn-bg: rgba(0, 0, 0, 0.644);
     --galary-scroller-btn-color: white;
 
     /* load more and read more buttons */

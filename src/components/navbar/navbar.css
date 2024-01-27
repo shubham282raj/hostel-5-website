@@ -11,6 +11,18 @@
   position: fixed;
 }
 
+#navbar .logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar .logo .hostelLogo{
+  height: 40px;
+  transform: scale(2);
+  margin-right: 30px;
+}
+
 #navbar .logo .hostelName {
   text-wrap: nowrap;
   color: var(--navbar-hostelname-color);
@@ -20,12 +32,29 @@
 #navbar .links {
   display: inline-flex;
   gap: 15px;
+  align-items: center;
 }
 
 .links a {
   text-decoration: none;
   color: var(--navbar-links-color);
   font-size: 24px;
+}
+
+.links .toggleTheme{
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.toggleTheme img{
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 #navbar .menuIcon {
@@ -66,6 +95,12 @@
     flex-direction: row;
     background-color: transparent;
     backdrop-filter: none;
+  }
+  #navbar .logo .hostelLogo{
+    height: 35px;
+    transform: scale(1.8);
+    margin-left: 10px;
+    margin-right: 22px;
   }
   #navbar .logo .hostelName {
     font-size: 27px;
@@ -140,5 +175,19 @@
     font-size: 23px;
     position: relative;
     transition: all var(--menu-transition-time);
+  }
+  .linkMenu .links .toggleTheme{
+    cursor: pointer;
+    padding-bottom: 7px;
+    font-size: 23px;
+    width: 25px;
+    height: 25px;
+    /* border: 2px solid red; */
+    position: absolute;
+    right: 20px;
+    top: 58px;
+  }
+  .linkMenu .links .toggleTheme img{
+
   }
 }

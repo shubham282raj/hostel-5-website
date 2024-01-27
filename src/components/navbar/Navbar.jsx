@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 import { useState } from "react";
 import { useThemeSwitch } from "../themeSwitcher/useThemeSwitch";
+import smallLogo from "./images/hostel5logo.png";
+import lightMode from "./images/light-mode.png";
+import darkMode from "./images/night-mode.png";
 
 export const Navbar = () => {
   const { colorMode, toggleTheme } = useThemeSwitch();
@@ -20,6 +23,7 @@ export const Navbar = () => {
     <>
       <div id="navbar">
         <span className="logo">
+          <img src={smallLogo} className="hostelLogo" />
           <span className="hostelName" id="navbarHostelName">
             Hostel 5
           </span>
@@ -38,19 +42,17 @@ export const Navbar = () => {
                 </Link>
               );
             })}
-            <Link>
-              <span
-                onClick={toggleTheme}
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  display: "inline-block",
-                  backgroundColor: colorMode ? "white" : "black",
-                  border: "2px solid black",
-                  borderColor: colorMode ? "black" : "white",
-                }}
-              ></span>
-            </Link>
+            <span
+              className="toggleTheme"
+              onClick={toggleTheme}
+              style={{
+                width: "20px",
+                height: "20px",
+                display: "inline-block",
+              }}
+            >
+              <img src={colorMode ? lightMode : darkMode} alt="" />
+            </span>
           </span>
           <span className="menuIcon" onClick={() => setToggleMenu(!toggleMenu)}>
             <div
@@ -111,19 +113,13 @@ export const Navbar = () => {
               </Link>
             );
           })}
-          <Link>
-            <span
-              onClick={toggleTheme}
-              style={{
-                width: "20px",
-                height: "20px",
-                display: "inline-block",
-                backgroundColor: colorMode ? "white" : "black",
-                border: "2px solid black",
-                borderColor: colorMode ? "black" : "white",
-              }}
-            ></span>
-          </Link>
+          <span
+            className="toggleTheme"
+            onClick={toggleTheme}
+            // style={{display: toggleMenu ? "": "none"}}
+          >
+            <img src={colorMode ? lightMode : darkMode} alt="" />
+          </span>
         </span>
       </div>
     </>

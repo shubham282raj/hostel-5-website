@@ -51,7 +51,7 @@
   display: inline-block;
   padding: 0px 5px;
   border-radius: 10px;
-  border: 2px solid var(--white);
+  border: 2px solid var(--read-more-border-color);
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   border-bottom: none;

@@ -35,7 +35,13 @@ export const useThemeSwitch = () => {
     );
     root.setProperty("--tab-text-color", colorMode ? "black" : "white");
     root.setProperty("", colorMode ? "" : "");
-    root.setProperty("", colorMode ? "" : "");
+    
+
+    //load more and read more btns
+    root.setProperty("--load-more-bg", colorMode ? "white" : "rgba(20,30,40,255)");
+    root.setProperty("--load-more-border-color", colorMode ? "none" : "white");
+    root.setProperty("--load-more-color", colorMode ? "black" : "white");
+    root.setProperty("--read-more-border-color", colorMode ? "black" : "white");
 
     //footer navigations
     root.setProperty("--footer-text-color", colorMode ? "black" : "white");

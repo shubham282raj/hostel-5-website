@@ -14,7 +14,7 @@ body {
 
 /* navbar and footer  */
 #universalNavbarPadding{
-  height: 77px
+  height: 80px
 }
 #universalFooterPadding{
   height: 0px;
@@ -22,7 +22,7 @@ body {
 
 @media screen and (max-width: 850px) {
   #universalNavbarPadding{
-    height: 120px
+    height: 123px
   }
 }
 

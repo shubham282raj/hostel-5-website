@@ -47,6 +47,7 @@
     --load-more-bg: rgb(70,70,70);
     --load-more-border-color: none;
     --load-more-color: white;
+    --read-more-border-color: white;
 
     /* footer navigation */
     --footer-text-color: black;

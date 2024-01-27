@@ -2,7 +2,7 @@ import "./cult.css";
 import { FooterNav } from "../../components/footerNav/footerNav";
 import { useLoadContent } from "../../components/loadPost/useLoadContent";
 import { FeedPost } from "../../components/feedPost/feedPost";
-import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnimation";
+import { LoadingTriangle } from "../../components/loadingTriangle/loadingTriangle";
 import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
 
@@ -21,7 +21,7 @@ const Cult = () => {
           })}
         </div>
         {feed.loading && (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
+          <LoadingTriangle/>
         )}
         {feed.hasMore && (
           <button className="tabLoadMoreBtn" onClick={feed.loadMore}>
@@ -41,7 +41,7 @@ const Cult = () => {
           })}
         </div>
         {gc.loading && (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
+          <LoadingTriangle/>
         )}
         {gc.hasMore && (
           <button className="tabLoadMoreBtn" onClick={gc.loadMore}>
@@ -61,7 +61,7 @@ const Cult = () => {
           })}
         </div>
         {galary.loading && (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
+          <LoadingTriangle/>
         )}
         {galary.hasMore && (
           <button className="tabLoadMoreBtn" onClick={galary.loadMore}>

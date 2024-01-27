@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import "./App.css";
 import { Navbar } from "./components/navbar/Navbar";
-import { LoadingCircleAnimation } from "./components/loadingCircleAnimation/loadingCircleAnimation";
+import { LoadingTriangle } from "./components/loadingTriangle/loadingTriangle";
 const Home = lazy(() => import("./pages/home/home"));
 const Tech = lazy(() => import("./pages/tech/tech"));
 const Cult = lazy(() => import("./pages/cult/cult"));
@@ -30,7 +30,7 @@ function App() {
       <Router>
         <Navbar />
         <div id="universalNavbarPadding"></div>
-        <Suspense fallback={<LoadingCircleAnimation/>}>
+        <Suspense fallback={LoadingTriangle}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tech" element={<Tech />} />

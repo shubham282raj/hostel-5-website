@@ -1,6 +1,6 @@
 {
   "short_name": "Hostel 5",
-  "name": "Create Hostel 5 Web App",
+  "name": "Install Hostel 5 Web App",
   "icons": [
     {
       "src": "favicon.png",
@@ -16,6 +16,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "rgb(8,18,30)",
+  "background_color": "rgba(33,40,50,255)"
 }

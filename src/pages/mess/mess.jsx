@@ -1,9 +1,9 @@
 import "./mess.css";
 import { FooterNav } from "../../components/footerNav/footerNav";
 import { useLoadContent } from "../../components/loadPost/useLoadContent";
-import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnimation";
 import { MessMenuPost } from "../../components/messMenuPost/messMenuPost";
 import { FeedPost } from "../../components/feedPost/feedPost";
+import { LoadingTriangle } from "../../components/loadingTriangle/loadingTriangle";
 
 const Mess = () => {
   const  [home] = useLoadContent("mess/feed/feed", 10)
@@ -15,7 +15,7 @@ const Mess = () => {
         {home.postsList?.map((post, key) => {
           return <FeedPost post={post} key={key} />;
         })}
-        {home.loading && <LoadingAnimation loadingText={true} marginTop="100px" />}
+        {home.loading && <LoadingTriangle/>}
         {home.hasMore && <button className="tabLoadMoreBtn" onClick={home.loadMore}>Load More</button>}
       </div>
     );
@@ -27,7 +27,7 @@ const Mess = () => {
         {mess.postsList != (null ) ? (mess.postsList?.map((post, key) => {
           return <MessMenuPost post={post} key={key} />;
         })) : (
-          <LoadingAnimation loadingText={true} marginTop="100px"/>
+          <LoadingTriangle/>
         )}
       </div>
     );

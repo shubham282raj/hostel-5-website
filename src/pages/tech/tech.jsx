@@ -2,9 +2,9 @@ import "./tech.css";
 import { FooterNav } from "../../components/footerNav/footerNav";
 import { useLoadContent } from "../../components/loadPost/useLoadContent";
 import { FeedPost } from "../../components/feedPost/feedPost";
-import { LoadingAnimation } from "../../components/loadingAnimation/loadingAnimation";
 import { GCPost } from "../../components/GCPost/gcPost";
 import { GalaryPost } from "../../components/galaryPost/galaryPost";
+import { LoadingTriangle } from "../../components/loadingTriangle/loadingTriangle";
 
 const Tech = () => {
   const [feed] = useLoadContent("tech/feed/feed");
@@ -20,9 +20,7 @@ const Tech = () => {
             return <FeedPost post={post} key={key} />;
           })}
         </div>
-        {feed.loading && (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
-        )}
+        {feed.loading && <LoadingTriangle />}
         {feed.hasMore && (
           <button className="tabLoadMoreBtn" onClick={feed.loadMore}>
             Load More
@@ -40,9 +38,7 @@ const Tech = () => {
             return <GCPost post={post} key={key} />;
           })}
         </div>
-        {gc.loading && (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
-        )}
+        {gc.loading && <LoadingTriangle />}
         {gc.hasMore && (
           <button className="tabLoadMoreBtn" onClick={gc.loadMore}>
             Load More
@@ -60,9 +56,7 @@ const Tech = () => {
             return <GalaryPost post={post} key={key} />;
           })}
         </div>
-        {galary.loading && (
-          <LoadingAnimation loadingText={true} marginTop="100px" />
-        )}
+        {galary.loading && <LoadingTriangle />}
         {galary.hasMore && (
           <button className="tabLoadMoreBtn" onClick={galary.loadMore}>
             Load More

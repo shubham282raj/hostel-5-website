@@ -1,0 +1,86 @@
+.loadingCircleAnimation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loadingCircleAnimation .outerTriangle {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --border-thickness: 15px;
+  width: 70px;
+  aspect-ratio: 1;
+  background-color: white;
+
+  animation: triangles 8s linear infinite;
+}
+.loadingCircleAnimation .innerTriangle {
+  --border-thickness: 15px;
+  width: 67px;
+  aspect-ratio: 1;
+  background-color: var(--background-color);
+  box-sizing: border-box;
+  animation: triangles 8s linear infinite;
+}
+@keyframes loadingCircle {
+  0% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 100% 100%, 0% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0% 100%, 0% 0%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+  }
+}
+
+@keyframes triangles {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 0 0);
+  }
+  8.333% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  }
+  16.666% {
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+  }
+  25% {
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+  }
+  33.333% {
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
+  41.666% {
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  }
+  50% {
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+  58.333% {
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+  }
+  66.666% {
+    clip-path: polygon(100% 100%, 0 0, 0 100%);
+  }
+  75% {
+    clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  }
+  83.333% {
+    clip-path: polygon(100% 100%, 100% 0, 0 0);
+  }
+  91.666% {
+    clip-path: polygon(0 100%, 100% 0, 0 0);
+  }
+  100% {
+    clip-path: polygon(0 100%, 100% 100%, 0 0);
+  }
+}

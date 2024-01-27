@@ -1,6 +1,5 @@
 .homePage .aboutUs{
-    border-bottom: 2px solid white;
-    margin: 10px 110px;
+    border-bottom: 2px solid var(--white);
     display: flex;
     justify-content: center;
 }
@@ -11,7 +10,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     height: 550px;
     max-width: 1100px;
     gap: 40px;
@@ -53,6 +51,9 @@
 }
 
 .homePage .aboutUs .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     flex: 2;
     /* border: 2px solid green; */
     /* padding: 0 40px; */
@@ -60,11 +61,24 @@
 }
 
 .homePage .aboutUs .content .heading{
-    font-size: 50px;
+    font-size: var(--home-page-heading-size);
     text-align: left;
 }
 
 .homePage .aboutUs .content .description{
-    font-size: 21px;
+    font-size: var(--home-page-description-size);
     text-align: justify;
+}
+
+@media screen and (max-width: 550px) {
+    .homePage .aboutUs .container{
+        flex-direction: column;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .homePage .aboutUs .container .image{
+        --width: 100%;
+        min-width:80%;
+    }
 }

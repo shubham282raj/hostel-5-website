@@ -1,14 +1,15 @@
 .tabPosts{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px 10px;
+  gap: 20px 0px;
   max-width: 100%;
   margin: auto;
 }
 .postContainer {
   margin: auto;
   margin-top: 0;
-  width: 27vw;
+  width: 93%;
+  /* width: 27vw; */
   background-color: var(--tab-card-bg);
 }
 .postContainer .text {
@@ -69,6 +70,20 @@
   font-size: 16px;
   user-select: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) and (min-width: 850px) {
+}
+
+@media screen and (max-width: 850px) and (min-width: 550px) {
+  .tabPosts{
+    grid-template-columns: repeat(1, 1fr);
+    min-width: 480px;
+    max-width: 70%;
+  }
+  .postContainer{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 550px) {

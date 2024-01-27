@@ -31,6 +31,10 @@
     --background-color: black;
     /* rgb(186, 186, 186); */
 
+    /* home page */
+    --home-page-heading-size: 50px;
+    --home-page-description-size: 21px;
+
     /* tabs */
     --tabname-bg: white;
     --tabname-color: black;

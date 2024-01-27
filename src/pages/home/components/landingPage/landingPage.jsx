@@ -3,7 +3,7 @@ import image from "./image.png";
 
 export const LandingPage = () => {
   return (
-    <div className="landingPage">
+    <div className="landingPage homePageFirstChildren">
       <div className="image">
       <img src={image} alt="hostelGateImage"/>
       </div>

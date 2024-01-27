@@ -17,9 +17,10 @@ export const useThemeSwitch = () => {
       "--background-color",
       colorMode ? "rgb(186, 186, 186)" : "rgba(33,40,50,255)"
     );
+    root.setProperty("--white", colorMode ? "black" : "white")
 
     //navbar colors
-    root.setProperty("--navbar-bg", colorMode ? "white" : "rgba(8,18,30,255)");
+    root.setProperty("--navbar-bg", colorMode ? "rgba(255,255,255,1)" : "rgb(8,18,30)");
     root.setProperty(
       "--navbar-hostelname-color",
       colorMode ? "black" : "white"

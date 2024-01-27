@@ -3,7 +3,7 @@ import image from "./image.jpg";
 
 export const OurMissionPage = () => {
   return (
-    <div className="ourMission">
+    <div className="ourMission homePageFirstChildren">
       <div className="container">
         <div className="content">
           <div className="heading">Our Mission</div>

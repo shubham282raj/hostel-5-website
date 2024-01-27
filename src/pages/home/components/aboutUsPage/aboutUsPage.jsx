@@ -3,7 +3,7 @@ import image from "./image.jpg";
 
 export const AboutUSPage = () => {
   return (
-    <div className="aboutUs">
+    <div className="aboutUs homePageFirstChildren">
       <div className="container">
         <div className="image">
           <div className="decorativeBorder"></div>

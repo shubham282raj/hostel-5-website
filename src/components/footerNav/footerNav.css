@@ -27,6 +27,12 @@
   /* padding: 10px; */
 }
 
+@media screen and (max-width: 1080px) and (min-width: 850px){
+  .tab{
+    width: 95%;
+  }
+}
+
 @media screen and (max-width: 850px) and (min-width: 550px) {
   #tabContainer {
     display: flex;

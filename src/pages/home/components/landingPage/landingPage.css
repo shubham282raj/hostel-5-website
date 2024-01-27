@@ -16,9 +16,9 @@
 }
 
 @media screen and (max-width: 850px) {
-    /* .homePage .landingPage{
-        margin-top: 80px;
-    } */
+    .homePage .landingPage{
+        margin-top: 0px;
+    }
     .homePage .landingPage .image img{
         max-width: 40vw;
         height: auto;
@@ -49,13 +49,16 @@
     .homePage .landingPage{
         flex-direction: column;
         height: auto;
+        padding-bottom: 20px;
     }
     .homePage .landingPage{
         margin-top: 20px;
     }
     .homePage .landingPage .image img{
-        max-width: 50vw;
+        /* max-width: 50vw;
         height: auto;
-        max-height: 70vh;
+        max-height: 70vh; */
+        min-width: 260px;
+        aspect-ratio: 0.55;
     }
 }

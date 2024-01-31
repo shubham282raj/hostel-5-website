@@ -13,35 +13,41 @@ const Council = () => {
     "council/StudentCouncil/StudentCouncil",
     50
   );
-  const [office] = useLoadContent("council/Office/Office", 50)
+  const [office] = useLoadContent("council/Office/Office", 50);
   //components
   const HomeTab = () => {
     return (
       <div className="councilTab">
         <div className="divisionType">Office</div>
-        {office.postsList?.map((post,key)=>{
-            return <CouncilMemPost post={post} key={key} />
-        })}
+        <div className="officePosts divisionPosts">
+          {office.postsList?.map((post, key) => {
+            return <CouncilMemPost post={post} key={key} />;
+          })}
+        </div>
         <div className="divisionType">Student Council</div>
-        {studentCouncil.postsList?.map((post, key) => {
-          return <CouncilMemPost post={post} key={key} />;
-        })}
-        {coordies.postsList?.map((post, key) => {
-          return (
-            <div key={key}>
-              <div className="divisionType">{post.divisionType}</div>
-              <CouncilMemPost post={post}/>
-              <div className="secies">
-                {secies.postsList?.map((secyPost, secyKey) => {
-                  if (post.divisionType === secyPost.divisionType) {
-                    return <CouncilMemPost post={secyPost} key={secyKey} />;
-                  }
-                  return <></>;
-                })}
+        <div className="studentCouncilPosts divisionPosts">
+          {studentCouncil.postsList?.map((post, key) => {
+            return <CouncilMemPost post={post} key={key} />;
+          })}
+        </div>
+        <div className="coPosts ">
+          {coordies.postsList?.map((post, key) => {
+            return (
+              <div key={key}>
+                <div className="divisionType">{post.divisionType}</div>
+                <CouncilMemPost post={post} />
+                <div className="seciesPosts divisionPosts">
+                  {secies.postsList?.map((secyPost, secyKey) => {
+                    if (post.divisionType === secyPost.divisionType) {
+                      return <CouncilMemPost post={secyPost} key={secyKey} />;
+                    }
+                    return <></>;
+                  })}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     );
   };
@@ -61,8 +67,8 @@ const Council = () => {
     <div>
       {/* the class which containes the tabs has id "tabContainer" */}
       <FooterNav
-        tabComponents={[<HomeTab />, <Login />]}
-        tabLabels={["Council", "Login"]}
+        tabComponents={[<HomeTab />]}
+        tabLabels={["Council"]}
       />
     </div>
   );

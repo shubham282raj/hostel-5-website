@@ -1,6 +1,6 @@
 {
   "short_name": "Hostel 5",
-  "name": "Install Hostel 5 Web App",
+  "name": "Hostel 5",
   "icons": [
     {
       "src": "favicon.png",
@@ -11,7 +11,8 @@
     {
       "src": "icon512.png",
       "type": "image/png",
-      "sizes": "192x192 512x512"
+      "sizes": "192x192 512x512",
+      "purpose": "maskable"
     }
   ],
   "start_url": ".",

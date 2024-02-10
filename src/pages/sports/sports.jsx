@@ -42,7 +42,7 @@ const Sports = () => {
   const GalaryTab = () => {
     return (
       <div className="sportsGalaryTab galaryTab">
-        <div className="tabName">Galary</div>
+        <div className="tabName">Gallery</div>
         <div className="galaryTabPosts tabPosts">
         {galary.postsList?.map((post, key) => {
           return <GalaryPost post={post} key={key} />;
@@ -63,7 +63,7 @@ const Sports = () => {
       {/* the class which containes the tabs has id "tabContainer" */}
       <FooterNav
         tabComponents={[<FeedTab />, <GCTab />, <GalaryTab />]}
-        tabLabels={["Feed", "GC", "Galary"]}
+        tabLabels={["Feed", "GC", "Gallery"]}
       />
     </div>
   );

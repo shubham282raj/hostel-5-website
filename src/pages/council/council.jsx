@@ -54,6 +54,8 @@ const Council = () => {
   const Login = () => {
     return (
       <div className="councilLogin">
+        <div className="heading">Council Login</div>
+        <div className="description">Login Page for council memebers only</div>
         <button onClick={() => navigate("login")}>Go to login Page</button>
       </div>
     );
@@ -67,8 +69,8 @@ const Council = () => {
     <div>
       {/* the class which containes the tabs has id "tabContainer" */}
       <FooterNav
-        tabComponents={[<HomeTab />]}
-        tabLabels={["Council"]}
+        tabComponents={[<HomeTab />, <Login/>]}
+        tabLabels={["Council", "Login"]}
       />
     </div>
   );

@@ -1,0 +1,45 @@
+.homePage .divisions{
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.homePage .divisions .division_container{
+    margin: 50px 0;
+    gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.homePage .divisions .division{
+    padding: 20px;
+    border: 1px solid var(--white);
+    width: 300px;
+    aspect-ratio: 1.3;
+    position: relative;
+}
+
+.homePage .divisions .heading{
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--white);
+}
+
+.homePage .divisions .description{
+    font-size: 18px;
+    bottom: 0px;
+}
+
+@media screen and (max-width: 850px) {
+    /* .homePage .divisions .division_container{
+        flex-direction: column;
+    }
+    .homePage .divisions .division{
+        width: 95%;
+        height: auto;
+        aspect-ratio: none;
+    } */
+}

@@ -8,12 +8,11 @@ export const OurMissionPage = () => {
         <div className="content">
           <div className="heading">Our Mission</div>
           <div className="description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut,
-            magnam ea. Ducimus veniam omnis a dignissimos tenetur eligendi
-            repellat esse sint. Sed reprehenderit pariatur suscipit corporis.
-            Atque mollitia consectetur cumque perspiciatis, neque numquam earum
-            in accusantium similique eos recusandae eligendi deserunt obcaecati.
-            Consequatur
+          At Hostel 5, our mission is simple yet profound: to provide an inclusive and 
+          nurturing environment where every resident can thrive academically, socially, 
+          and personally. We strive to cultivate a culture of respect, collaboration, 
+          and innovation, empowering our residents to pursue their passions, excel in 
+          their studies, and make meaningful contributions to society.
           </div>
         </div>
         <div className="image">

@@ -10,13 +10,13 @@ export const LandingPage = () => {
       <div className="content">
         <div className="heading">Hostel 5</div>
         <div className="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nisi
-          perferendis aliquam molestias sed ex dolor, cumque praesentium error
-          optio. Est saepe quod veniam eius magni non modi, repellat fugit
-          deleniti perferendis odit, laboriosam itaque hic dicta unde quo quae,
-          vitae tempore blanditiis. Veniam unde dicta assumenda neque ea optio.
-          Hic aut doloremque earum alias quas, labore fugit corporis doloribus
+        Welcome to the beating heart of student life at 
+        IIT Bombay — where camaraderie meets academic 
+        excellence, and every corridor echoes with the 
+        spirit of innovation. Welcome to Hostel 5, your 
+        home away from home.
         </div>
+        
       </div>
     </div>
   );

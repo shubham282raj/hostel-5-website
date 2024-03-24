@@ -3,6 +3,7 @@ import { LandingPage } from "./components/landingPage/landingPage";
 import { AboutUSPage } from "./components/aboutUsPage/aboutUsPage";
 import { OurMissionPage } from "./components/ourMissionPage/ourMissionPage";
 import { useLoadContent } from "../../components/loadPost/useLoadContent";
+import { Divisions } from "./components/divisions/divisions";
 
 const Home = () => {
 
@@ -17,8 +18,7 @@ const Home = () => {
       <LandingPage />
       <AboutUSPage />
       <OurMissionPage />
-      <AboutUSPage />
-      <OurMissionPage />
+      <Divisions />
     </div>
   );
 };

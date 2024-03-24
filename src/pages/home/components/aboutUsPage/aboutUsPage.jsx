@@ -12,12 +12,10 @@ export const AboutUSPage = () => {
         <div className="content">
           <div className="heading">About Us</div>
           <div className="description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut,
-            magnam ea. Ducimus veniam omnis a dignissimos tenetur eligendi
-            repellat esse sint. Sed reprehenderit pariatur suscipit corporis.
-            Atque mollitia consectetur cumque perspiciatis, neque numquam earum
-            in accusantium similique eos recusandae eligendi deserunt obcaecati.
-            Consequatur
+          Located within the vibrant campus of the prestigious Indian Institute of Technology Bombay, 
+          Hostel 5 stands as more than just a residence; it's a community, a home away from home for 
+          students from diverse backgrounds and disciplines. With a rich history spanning decades, 
+          Hostel 5 has been a cornerstone of student life, fostering academic excellence, camaraderie, and personal growth.
           </div>
         </div>
       </div>

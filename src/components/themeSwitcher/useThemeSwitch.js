@@ -15,12 +15,16 @@ export const useThemeSwitch = () => {
 
     root.setProperty(
       "--background-color",
-      colorMode ? "rgb(186, 186, 186)" : "rgba(33,40,50,255)"
+      colorMode ? "white" : "rgba(33,40,50,255)"
     );
     root.setProperty("--white", colorMode ? "black" : "white")
 
     //navbar colors
-    root.setProperty("--navbar-bg", colorMode ? "rgba(255,255,255,1)" : "rgb(8,18,30)");
+    if (colorMode) {
+      document.getElementById("navbar").style.borderBottom = "2px solid black";
+    }
+
+    root.setProperty("--navbar-bg", colorMode ? "white" : "rgb(8,18,30)");
     root.setProperty(
       "--navbar-hostelname-color",
       colorMode ? "black" : "white"
@@ -32,21 +36,21 @@ export const useThemeSwitch = () => {
     //tab color settings
     root.setProperty(
       "--tab-card-bg",
-      colorMode ? "white" : "rgba(20,30,40,255)"
+      colorMode ? "rgb(245,245,245)" : "rgba(20,30,40,255)"
     );
     root.setProperty("--tab-text-color", colorMode ? "black" : "white");
     root.setProperty("", colorMode ? "" : "");
     
 
     //load more and read more btns
-    root.setProperty("--load-more-bg", colorMode ? "white" : "rgba(20,30,40,255)");
+    root.setProperty("--load-more-bg", colorMode ? "rgb(245,245,245)" : "rgba(20,30,40,255)");
     root.setProperty("--load-more-border-color", colorMode ? "none" : "white");
     root.setProperty("--load-more-color", colorMode ? "black" : "white");
     root.setProperty("--read-more-border-color", colorMode ? "black" : "white");
 
     //footer navigations
     root.setProperty("--footer-text-color", colorMode ? "black" : "white");
-    root.setProperty("--footer-selected-color", colorMode ? "white" : "black");
+    root.setProperty("--footer-selected-color", colorMode ? "#DDDDDD" : "black");
     root.setProperty(
       "--footer-selected-bg",
       colorMode ? "rgb(70,70,70)" : "white"

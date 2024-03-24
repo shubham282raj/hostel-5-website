@@ -9,8 +9,7 @@
 .postContainer {
   margin: auto;
   margin-top: 0;
-  width: 93%;
-  /* width: 27vw; */
+  max-width: 27vw;
   background-color: var(--tab-card-bg);
 }
 .postContainer .text {
@@ -83,7 +82,7 @@
     max-width: 70%;
   }
   .postContainer{
-    width: 100%;
+    max-width: 400px;
   }
 }
 
@@ -94,6 +93,6 @@
     max-width: 96%;
   }
   .postContainer{
-    width: 100%;
+    max-width: 100%;
   }
 }
